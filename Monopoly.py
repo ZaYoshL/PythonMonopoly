@@ -1,7 +1,7 @@
 import random
 import sys
 import math
-import randint
+#import randint
 
 Player1Money = 2000 #Money to start with
 Player2Money = 2000
@@ -912,16 +912,16 @@ def HowManyPlayers():
 
 def DiceRoll(y):
     if y == 1:
-#        return 1
+        return 12
         return random.randint(2, 12)
     elif y == 2:
-#        return 1
+        return 12
         return random.randint(2, 12)
     elif y == 3:
-#        return 1
+        return 12
         return random.randint(2, 12)
     elif y == 4:
-#        return 1
+        return 12
         return random.randint(2, 12)
 
 
@@ -1222,6 +1222,7 @@ def LandedPlaces(landedOn, WhosThis):
     global StJamesPlace
     global TennesseeAve
     global NewYorkAve'''
+    global list4
     global FreeParkingMoney
     '''global KentuckyAve
     global IndianaAve
@@ -1424,11 +1425,11 @@ def LandedPlaces(landedOn, WhosThis):
 
 
     elif landedOn == 13:#26
-            if list3[27] != 0:
+            if list3[26] != 0:
                     if list3[26] == list3[27]:
-                            list4[27] == random.randint(2, 12) * 10
+                            list4[26] = random.randint(2, 12) * 10
                     else:
-                            list4[27] == random.randint(2, 12) * 4
+                            list4[26] = random.randint(2, 12) * 4
             if WhosThis == 1:
                     #print("Player 1 has landed on the Electric Company. (Press Enter)")
                     UseTheList(26, WhosThis)
@@ -1547,9 +1548,9 @@ def LandedPlaces(landedOn, WhosThis):
     elif landedOn == 29:#27
             if list3[27] != 0:
                     if list3[26] == list3[27]:
-                            list4[27] == random.randint(2, 12) * 10
+                            list4[27] = random.randint(2, 12) * 10
                     else:
-                            list4[27] == random.randint(2, 12) * 4
+                            list4[27] = random.randint(2, 12) * 4
             if WhosThis == 1:
                     #print("Player 1 has landed on the Water Works. (Press Enter)")
                     UseTheList(27, WhosThis)
