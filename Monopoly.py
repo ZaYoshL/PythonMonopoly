@@ -912,16 +912,16 @@ def HowManyPlayers():
 
 def DiceRoll(y):
     if y == 1:
-        return 12
+        #return 12
         return random.randint(2, 12)
     elif y == 2:
-        return 12
+        #return 12
         return random.randint(2, 12)
     elif y == 3:
-        return 12
+        #return 12
         return random.randint(2, 12)
     elif y == 4:
-        return 12
+        #return 12
         return random.randint(2, 12)
 
 
