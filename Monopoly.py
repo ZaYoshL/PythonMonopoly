@@ -1680,6 +1680,7 @@ def LandedPlaces(landedOn, WhosThis):
             
     else:#40 / Boardwalk
             UseTheList(21, WhosThis)
+    MONOPOLY()
 
 
 
@@ -1761,7 +1762,7 @@ def TradingWithPeople(StarterOfTrade, WhoTheyWantToTrade):
                                                 elif list3[x] == WhoTheyWantToTrade:
                                                         list5[x] = StarterOfTrade
                                                         print("The trade was succesful.")
-                                                elif list5[x] == StarterOfTrade:
+                                                elif list3[x] == StarterOfTrade:
                                                         list5[x] = WhoTheyWantToTrade
                                                         print("The trade was succesful.")
                                                 else:
@@ -1961,6 +1962,7 @@ def TradingWithPeople(StarterOfTrade, WhoTheyWantToTrade):
                                                         print("The deal was succesful. (Please press enter to continue.)")
                                                         exitTradeLoop = 1
                                                         input()
+                                        MONOPOLY()
                                         break
                                 elif AnswerToTrade == "no" or AnswerToTrade == "n":
                                         print("Would you like to make 'changes' to the trade or just flat out 'cancel' the trade?")
@@ -2006,15 +2008,161 @@ def TradingWithPeople(StarterOfTrade, WhoTheyWantToTrade):
 
 
 
-
+GreenHouses = 32
+RedHotels = 12
+#                          0  2  4  5  7  9  0  2  4  5  7  8  0  2  3  5  8  0
+#              2  4  7  9  1  1  1  1  1  1  2  2  2  2  2  2  3  3  3  3  3  4
+HousesArray = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 def PromotingBuildings(PlayerWhosPromoting):
         print()
 
 
 
-
-
+#                      0  1  2  3  4  5  6  7
+#                      D  L     O     Y
+#                               r     e  G
+#                      B  B  P  a     l  r  B
+#                      l  l  i  n  R  l  e  l
+#                      u  u  n  g  e  o  e  u
+#                      e  e  k  e  d  w  n  e
+AlreadyWasAMonopoly = [0, 0, 0, 0, 0, 0, 0, 0]
 def MONOPOLY():
+        global list3
+        global list4
+        if AlreadyWasAMonopoly[0] == 0 and list3[0] == list3[1] != 0:
+                list4[0] *= 2
+                list4[0] = (int)(list4[0])
+                list4[1] *= 2
+                list4[1] = (int)(list4[1])
+                AlreadyWasAMonopoly[0] = 1
+        if AlreadyWasAMonopoly[0] == 1 and list3[0] != list3[1] != 0:
+                list4[0] /= 2
+                list4[0] = (int)(list4[0])
+                list4[1] /= 2
+                list4[1] = (int)(list4[1])
+                AlreadyWasAMonopoly[0] = 0
+
+                
+        if AlreadyWasAMonopoly[1] == 0 and list3[2] == list3[3] == list3[4] != 0:
+                list4[2] *= 2
+                list4[2] = (int)(list4[2])
+                list4[3] *= 2
+                list4[3] = (int)(list4[3])
+                list4[4] *= 2
+                list4[4] = (int)(list4[4])
+                AlreadyWasAMonopoly[1] = 1
+        if AlreadyWasAMonopoly[1] == 1 and list3[2] != list3[3] != list3[4] != 0:
+                list4[2] /= 2
+                list4[2] = (int)(list4[2])
+                list4[3] /= 2
+                list4[3] = (int)(list4[3])
+                list4[4] /= 2
+                list4[4] = (int)(list4[4])
+                AlreadyWasAMonopoly[1] = 0
+
+
+        if AlreadyWasAMonopoly[2] == 0 and list3[5] == list3[6] == list3[7] != 0:
+                list4[5] *= 2
+                list4[5] = (int)(list4[5])
+                list4[6] *= 2
+                list4[6] = (int)(list4[6])
+                list4[7] *= 2
+                list4[7] = (int)(list4[7])
+                AlreadyWasAMonopoly[2] = 1
+        if AlreadyWasAMonopoly[2] == 1 and list3[5] != list3[6] != list3[7] != 0:
+                list4[5] /= 2
+                list4[5] = (int)(list4[5])
+                list4[6] /= 2
+                list4[6] = (int)(list4[6])
+                list4[7] /= 2
+                list4[7] = (int)(list4[7])
+                AlreadyWasAMonopoly[2] = 0
+
+
+        if AlreadyWasAMonopoly[3] == 0 and list3[8] == list3[9] == list3[10] != 0:
+                list4[8] *= 2
+                list4[8] = (int)(list4[8])
+                list4[9] *= 2
+                list4[9] = (int)(list4[9])
+                list4[10] *= 2
+                list4[10] = (int)(list4[10])
+                AlreadyWasAMonopoly[3] = 1
+        if AlreadyWasAMonopoly[3] == 1 and list3[8] != list3[9] != list3[10] != 0:
+                list4[8] /= 2
+                list4[8] = (int)(list4[8])
+                list4[9] /= 2
+                list4[9] = (int)(list4[9])
+                list4[10] /= 2
+                list4[10] = (int)(list4[10])
+                AlreadyWasAMonopoly[3] = 0
+
+
+        if AlreadyWasAMonopoly[4] == 0 and list3[11] == list3[12] == list3[13] != 0:
+                list4[11] *= 2
+                list4[11] = (int)(list4[11])
+                list4[12] *= 2
+                list4[12] = (int)(list4[12])
+                list4[13] *= 2
+                list4[13] = (int)(list4[13])
+                AlreadyWasAMonopoly[4] = 1
+        if AlreadyWasAMonopoly[4] == 1 and list3[11] != list3[12] != list3[13] != 0:
+                list4[11] /= 2
+                list4[11] = (int)(list4[11])
+                list4[12] /= 2
+                list4[12] = (int)(list4[12])
+                list4[13] /= 2
+                list4[13] = (int)(list4[13])
+                AlreadyWasAMonopoly[4] = 0
+
+
+        if AlreadyWasAMonopoly[5] == 0 and list3[14] == list3[15] == list3[16] != 0:
+                list4[14] *= 2
+                list4[14] = (int)(list4[14])
+                list4[15] *= 2
+                list4[15] = (int)(list4[15])
+                list4[16] *= 2
+                list4[16] = (int)(list4[16])
+                AlreadyWasAMonopoly[5] = 1
+        if AlreadyWasAMonopoly[5] == 1 and list3[14] != list3[15] != list3[16] != 0:
+                list4[14] /= 2
+                list4[14] = (int)(list4[14])
+                list4[15] /= 2
+                list4[15] = (int)(list4[15])
+                list4[16] /= 2
+                list4[16] = (int)(list4[16])
+                AlreadyWasAMonopoly[5] = 0
+
+
+        if AlreadyWasAMonopoly[6] == 0 and list3[17] == list3[18] == list3[19] != 0:
+                list4[17] *= 2
+                list4[17] = (int)(list4[17])
+                list4[18] *= 2
+                list4[18] = (int)(list4[18])
+                list4[19] *= 2
+                list4[19] = (int)(list4[19])
+                AlreadyWasAMonopoly[6] = 1
+        if AlreadyWasAMonopoly[6] == 1 and list3[17] != list3[18] != list3[19] != 0:
+                list4[17] /= 2
+                list4[17] = (int)(list4[17])
+                list4[18] /= 2
+                list4[18] = (int)(list4[18])
+                list4[19] /= 2
+                list4[19] = (int)(list4[19])
+                AlreadyWasAMonopoly[6] = 0
+
+
+        if AlreadyWasAMonopoly[7] == 0 and list3[20] == list3[21] != 0:
+                list4[20] *= 2
+                list4[20] = (int)(list4[20])
+                list4[21] *= 2
+                list4[21] = (int)(list4[21])
+                AlreadyWasAMonopoly[7] = 1
+        if AlreadyWasAMonopoly[7] == 1 and list3[20] != list3[21] != 0:
+                list4[20] /= 2
+                list4[20] = (int)(list4[20])
+                list4[21] /= 2
+                list4[21] = (int)(list4[21])
+                AlreadyWasAMonopoly[7] = 0
         print()
 
 
