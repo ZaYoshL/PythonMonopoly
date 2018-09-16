@@ -887,15 +887,18 @@ def MonopolyMap():
 def HowManyPlayers():
     print("How many players? (2-4)")
     while True:
-        x = int(input())
-        if x == 4:
-            return 4
-        elif x == 3:
-            return 3
-        elif x == 2:
-            return 2
-        else:
-            print("That is not 2, 3, or 4")
+            try:
+                    x = int(input())
+                    if x == 4:
+                            return 4
+                    elif x == 3:
+                            return 3
+                    elif x == 2:
+                            return 2
+                    else:
+                            print("That is not 2, 3, or 4")
+            except Exception:
+                    print("That isn't a int.")
 
 
 
@@ -2002,6 +2005,9 @@ def TradingWithPeople(StarterOfTrade, WhoTheyWantToTrade):
 
 
 
+
+
+
 GreenHouses = 32
 RedHotels = 12
 #                          0  2  4  5  7  9  0  2  4  5  7  8  0  2  3  5  8  0
@@ -2010,6 +2016,13 @@ HousesArray = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 def PromotingBuildings(PlayerWhosPromoting):
         global list3
         global list4
+        global HousesArray
+        global GreenHouses
+        global RedHotels
+        global Player1Money
+        global Player2Money
+        global Player3Money
+        global Player4Money
         print("You can currently put green and red houses on...")
         if list3[0] == list3[1] == PlayerWhosPromoting:
                 print("Mediterranean Ave. and Baltic Ave.")
@@ -2033,69 +2046,156 @@ def PromotingBuildings(PlayerWhosPromoting):
                 Cost = [50, 100, 150, 200]
                 if list3[0] == list3[1] == PlayerWhosPromoting and WhatTheyWantToPromote == list1[0] or list3[0] == list3[1] == PlayerWhosPromoting and WhatTheyWantToPromote == list1[1] :
                         if WhatTheyWantToPromote == list1[0]:
-                                print("Do you really want to put a house on " + list1[0]+ " for $"+ str(Cost[0]) +"?")
+                                print("Do you really want to put a house on " + list1[0]+ " for $"+ str(Cost[0]) +"?(Yes/No)")
+                                HouseUpgrading(PlayerWhosPromoting, Cost[0], 0)
                         if WhatTheyWantToPromote == list1[1]:
-                                print("Do you really want to put a house on " + list1[1]+ " for $"+ str(Cost[0]) +"?")
+                                print("Do you really want to put a house on " + list1[1]+ " for $"+ str(Cost[0]) +"?(Yes/No)")
+                                HouseUpgrading(PlayerWhosPromoting, Cost[0], 1)
                         #print("Mediterranean Ave. and Baltic Ave.")
                 elif list3[2] == list3[3] == list3[4] == PlayerWhosPromoting and WhatTheyWantToPromote == list1[2] or list3[2] == list3[3] == list3[4] == PlayerWhosPromoting and WhatTheyWantToPromote == list1[3] or list3[2] == list3[3] == list3[4] == PlayerWhosPromoting and WhatTheyWantToPromote == list1[4]:
                         if WhatTheyWantToPromote == list1[2]:
-                                print("Do you really want to put a house on " + list1[2]+ " for $"+ str(Cost[0]) +"?")
+                                print("Do you really want to put a house on " + list1[2]+ " for $"+ str(Cost[0]) +"?(Yes/No)")
+                                HouseUpgrading(PlayerWhosPromoting, Cost[0], 2)
                         if WhatTheyWantToPromote == list1[3]:
-                                print("Do you really want to put a house on " + list1[3]+ " for $"+ str(Cost[0]) +"?")
+                                print("Do you really want to put a house on " + list1[3]+ " for $"+ str(Cost[0]) +"?(Yes/No)")
+                                HouseUpgrading(PlayerWhosPromoting, Cost[0], 3)
                         if WhatTheyWantToPromote == list1[4]:
-                                print("Do you really want to put a house on " + list1[4]+ " for $"+ str(Cost[0]) +"?")
+                                print("Do you really want to put a house on " + list1[4]+ " for $"+ str(Cost[0]) +"?(Yes/No)")
+                                HouseUpgrading(PlayerWhosPromoting, Cost[0], 4)
                         #print("Oriental Ave., Vermont Ave., and Connecticut Ave.")
                 elif list3[5] == list3[6] == list3[7] == PlayerWhosPromoting and WhatTheyWantToPromote == list1[5] or list3[5] == list3[6] == list3[7] == PlayerWhosPromoting and WhatTheyWantToPromote == list1[6] or list3[5] == list3[6] == list3[7] == PlayerWhosPromoting and WhatTheyWantToPromote == list1[7]:
                         if WhatTheyWantToPromote == list1[5]:
-                                print("Do you really want to put a house on " + list1[5]+ " for $"+ str(Cost[1]) +"?")
+                                print("Do you really want to put a house on " + list1[5]+ " for $"+ str(Cost[1]) +"?(Yes/No)")
+                                HouseUpgrading(PlayerWhosPromoting, Cost[1], 5)
                         if WhatTheyWantToPromote == list1[6]:
-                                print("Do you really want to put a house on " + list1[6]+ " for $"+ str(Cost[1]) +"?")
+                                print("Do you really want to put a house on " + list1[6]+ " for $"+ str(Cost[1]) +"?(Yes/No)")
+                                HouseUpgrading(PlayerWhosPromoting, Cost[1], 6)
                         if WhatTheyWantToPromote == list1[7]:
-                                print("Do you really want to put a house on " + list1[7]+ " for $"+ str(Cost[1]) +"?")
+                                print("Do you really want to put a house on " + list1[7]+ " for $"+ str(Cost[1]) +"?(Yes/No)")
+                                HouseUpgrading(PlayerWhosPromoting, Cost[1], 7)
                         #print("St. Charles Place, States Ave., and Virginia Ave.")
                 elif list3[8] == list3[9] == list3[10] == PlayerWhosPromoting and WhatTheyWantToPromote == list1[8] or list3[8] == list3[9] == list3[10] == PlayerWhosPromoting and WhatTheyWantToPromote == list1[9] or list3[8] == list3[9] == list3[10] == PlayerWhosPromoting and WhatTheyWantToPromote == list1[10]:
                         if WhatTheyWantToPromote == list1[8]:
-                                print("Do you really want to put a house on " + list1[8]+ " for $"+ str(Cost[1]) +"?")
+                                print("Do you really want to put a house on " + list1[8]+ " for $"+ str(Cost[1]) +"?(Yes/No)")
+                                HouseUpgrading(PlayerWhosPromoting, Cost[1], 8)
                         if WhatTheyWantToPromote == list1[9]:
-                                print("Do you really want to put a house on " + list1[9]+ " for $"+ str(Cost[1]) +"?")
+                                print("Do you really want to put a house on " + list1[9]+ " for $"+ str(Cost[1]) +"?(Yes/No)")
+                                HouseUpgrading(PlayerWhosPromoting, Cost[1], 9)
                         if WhatTheyWantToPromote == list1[10]:
-                                print("Do you really want to put a house on " + list1[10]+ " for $"+ str(Cost[1]) +"?")
+                                print("Do you really want to put a house on " + list1[10]+ " for $"+ str(Cost[1]) +"?(Yes/No)")
+                                HouseUpgrading(PlayerWhosPromoting, Cost[1], 10)
                         #print("St. James Place, Tennessee Ave., and New York Ave.")
                 elif list3[11] == list3[12] == list3[13] == PlayerWhosPromoting and WhatTheyWantToPromote == list1[11] or list3[11] == list3[12] == list3[13] == PlayerWhosPromoting and WhatTheyWantToPromote == list1[12] or list3[11] == list3[12] == list3[13] == PlayerWhosPromoting and WhatTheyWantToPromote == list1[13]:
                         if WhatTheyWantToPromote == list1[11]:
-                                print("Do you really want to put a house on " + list1[11]+ " for $"+ str(Cost[2]) +"?")
+                                print("Do you really want to put a house on " + list1[11]+ " for $"+ str(Cost[2]) +"?(Yes/No)")
+                                HouseUpgrading(PlayerWhosPromoting, Cost[2], 11)
                         if WhatTheyWantToPromote == list1[12]:
-                                print("Do you really want to put a house on " + list1[12]+ " for $"+ str(Cost[2]) +"?")
+                                print("Do you really want to put a house on " + list1[12]+ " for $"+ str(Cost[2]) +"?(Yes/No)")
+                                HouseUpgrading(PlayerWhosPromoting, Cost[2], 12)
                         if WhatTheyWantToPromote == list1[13]:
-                                print("Do you really want to put a house on " + list1[13]+ " for $"+ str(Cost[2]) +"?")
+                                print("Do you really want to put a house on " + list1[13]+ " for $"+ str(Cost[2]) +"?(Yes/No)")
+                                HouseUpgrading(PlayerWhosPromoting, Cost[2], 13)
                         #print("Kentucky Ave., Indiana Ave., and Illinois Ave.")
                 elif list3[14] == list3[15] == list3[16] == PlayerWhosPromoting and WhatTheyWantToPromote == list1[14] or list3[14] == list3[15] == list3[16] == PlayerWhosPromoting and WhatTheyWantToPromote == list1[15] or list3[14] == list3[15] == list3[16] == PlayerWhosPromoting and WhatTheyWantToPromote == list1[16]:
                         if WhatTheyWantToPromote == list1[14]:
-                                print("Do you really want to put a house on " + list1[14]+ " for $"+ str(Cost[2]) +"?")
+                                print("Do you really want to put a house on " + list1[14]+ " for $"+ str(Cost[2]) +"?(Yes/No)")
+                                HouseUpgrading(PlayerWhosPromoting, Cost[2], 14)
                         if WhatTheyWantToPromote == list1[15]:
-                                print("Do you really want to put a house on " + list1[15]+ " for $"+ str(Cost[2]) +"?")
+                                print("Do you really want to put a house on " + list1[15]+ " for $"+ str(Cost[2]) +"?(Yes/No)")
+                                HouseUpgrading(PlayerWhosPromoting, Cost[2], 15)
                         if WhatTheyWantToPromote == list1[16]:
-                                print("Do you really want to put a house on " + list1[16]+ " for $"+ str(Cost[2]) +"?")
+                                print("Do you really want to put a house on " + list1[16]+ " for $"+ str(Cost[2]) +"?(Yes/No)")
+                                HouseUpgrading(PlayerWhosPromoting, Cost[2], 16)
                         #print("Atlantic Ave., Ventnor Ave., and Marvin Gardens.")
                 elif list3[17] == list3[18] == list3[19] == PlayerWhosPromoting and WhatTheyWantToPromote == list1[17] or list3[17] == list3[18] == list3[19] == PlayerWhosPromoting and WhatTheyWantToPromote == list1[18] or list3[17] == list3[18] == list3[19] == PlayerWhosPromoting and WhatTheyWantToPromote == list1[19]:
                         if WhatTheyWantToPromote == list1[17]:
-                                print("Do you really want to put a house on " + list1[17]+ " for $"+ str(Cost[3]) +"?")
+                                print("Do you really want to put a house on " + list1[17]+ " for $"+ str(Cost[3]) +"?(Yes/No)")
+                                HouseUpgrading(PlayerWhosPromoting, Cost[3], 17)
                         if WhatTheyWantToPromote == list1[18]:
-                                print("Do you really want to put a house on " + list1[18]+ " for $"+ str(Cost[3]) +"?")
+                                print("Do you really want to put a house on " + list1[18]+ " for $"+ str(Cost[3]) +"?(Yes/No)")
+                                HouseUpgrading(PlayerWhosPromoting, Cost[3], 18)
                         if WhatTheyWantToPromote == list1[19]:
-                                print("Do you really want to put a house on " + list1[19]+ " for $"+ str(Cost[3]) +"?")
+                                print("Do you really want to put a house on " + list1[19]+ " for $"+ str(Cost[3]) +"?(Yes/No)")
+                                HouseUpgrading(PlayerWhosPromoting, Cost[3], 19)
                         #print("Pacific Ave., North Carolina Ave., and Pennsylvania Ave.")
                 elif list3[20] == list3[21] == PlayerWhosPromoting and WhatTheyWantToPromote == list1[20] or list3[20] == list3[21] == PlayerWhosPromoting and WhatTheyWantToPromote == list1[21]:
                         if WhatTheyWantToPromote == list1[20]:
-                                print("Do you really want to put a house on " + list1[20]+ " for $"+ str(Cost[3]) +"?")
+                                print("Do you really want to put a house on " + list1[20]+ " for $"+ str(Cost[3]) +"?(Yes/No)")
+                                HouseUpgrading(PlayerWhosPromoting, Cost[3], 20)
                         if WhatTheyWantToPromote == list1[21]:
-                                print("Do you really want to put a house on " + list1[21]+ " for $"+ str(Cost[3]) +"?")
+                                print("Do you really want to put a house on " + list1[21]+ " for $"+ str(Cost[3]) +"?(Yes/No)")
+                                HouseUpgrading(PlayerWhosPromoting, Cost[3], 21)
                         #print("Park Place and Boardwalk.")
                 elif WhatTheyWantToPromote.lower() == "exit" or WhatTheyWantToPromote.lower() == "exi" or WhatTheyWantToPromote.lower() == "ex" or WhatTheyWantToPromote.lower() == "e":
                         break
                 else:
                         print("You either don't own that place, have a monopoly in that area, or you spelled it wrong.")
         print()
+
+
+
+def HouseUpgrading(Player, CostOfHouse, Place):
+        global list3
+        global list4
+        global HousesArray
+        global GreenHouses
+        global RedHotels
+        global Player1Money
+        global Player2Money
+        global Player3Money
+        global Player4Money
+        #print(".")
+        YesNo = ""
+        while True:
+                YesNo = input()
+                if YesNo.lower() == "yes" or YesNo.lower() == "no":
+                        break
+        if YesNo.lower() == "yes":
+                if Player == 1:
+                        if Player1Money >= CostOfHouse:
+                                if GreenHouses > 0 and HousesArray[Place] < 4 or RedHotels > 0 and HousesArray[Place] == 4:
+                                        Player1Money -= CostOfHouse
+                                        HousesArray[Place] += 1
+                                        print("It was succesful.")
+                                else:
+                                        print("There isn't enough houses left for that.")
+                        else:
+                                print("Player one doesn't have enough money to put a house on his place")
+                elif Player == 2:
+                        if Player2Money >= CostOfHouse:
+                                if GreenHouses > 0 and HousesArray[Place] < 4 or RedHotels > 0 and HousesArray[Place] == 4:
+                                        Player2Money -= CostOfHouse
+                                        HousesArray[Place] += 1
+                                        print("It was succesful.")
+                                else:
+                                        print("There isn't enough houses left for that.")
+                        else:
+                                print("Player two doesn't have enough money to put a house on his place")
+                elif Player == 3:
+                        if Player3Money >= CostOfHouse:
+                                if GreenHouses > 0 and HousesArray[Place] < 4 or RedHotels > 0 and HousesArray[Place] == 4:
+                                        Player3Money -= CostOfHouse
+                                        HousesArray[Place] += 1
+                                        print("It was succesful.")
+                                else:
+                                        print("There isn't enough houses left for that.")
+                        else:
+                                print("Player three doesn't have enough money to put a house on his place")
+                else:
+                        if Player4Money >= CostOfHouse:
+                                if GreenHouses > 0 and HousesArray[Place] < 4 or RedHotels > 0 and HousesArray[Place] == 4:
+                                        Player4Money -= CostOfHouse
+                                        HousesArray[Place] += 1
+                                        print("It was succesful.")
+                                else:
+                                        print("There isn't enough houses left for that.")
+                        else:
+                                print("Player four doesn't have enough money to put a house on his place")
+
+        print("So, do you want to put houses on anything else? If not, you can just type exit to leave.")
+                
+
+
 
 
 
@@ -2251,6 +2351,7 @@ def MONOPOLY():
 
 
 def ChanceTime(PlayerEffected):
+        DaNumberYouGot = random.randint(1, 1)
         print()
 
 
@@ -2258,6 +2359,7 @@ def ChanceTime(PlayerEffected):
 
 
 def CommunityChest(PlayerEffected):
+        DaNumberYouGot = random.randint(1, 1)
         print()
 
 
@@ -2266,7 +2368,10 @@ def CommunityChest(PlayerEffected):
 
 #def ElectricCompanyWaterWorks(PlayerWhoLandedOnOneOfThem, LandedOn):
 #        print()
-
+def GetAllBuildings():
+        for x in range(0, 28):
+                list3[x] = 1
+        
 
 
 
@@ -2274,6 +2379,7 @@ def CommunityChest(PlayerEffected):
 
         
 x = HowManyPlayers()
+#global HousesArray
 if x == 3:
     Player4Location = 99999
     Player4Money = 1
@@ -2350,7 +2456,11 @@ while True:
                 #list3 is the owner
                 #list4 is the rent
                 for x in range(0, 28):
-                        print(list1[x] + ", cost - " + str(list2[x])+ ", the owner is player - " + str(list3[x]) + " and the rent is currently " + str(list4[x])+".")
+                        if x < 22:
+                                print(list1[x] + ", cost - " + str(list2[x])+ ", the owner is player - " + str(list3[x]) + " and the rent is currently " + str(list4[x])+" Houses on this place "+ str(HousesArray[x]) +".")
+                        else:
+                                print(list1[x] + ", cost - " + str(list2[x])+ ", the owner is player - " + str(list3[x]) + " and the rent is currently " + str(list4[x])+".")
+                                
                 '''print(list1[0] + ", cost - " + str(list2[0])+ ", the owner is player - " + str(list3[0]) + " and the rent is currently " + str(list4[0])+".")
                 print(list1[1] + ", cost - " + str(list2[1])+ ", the owner is player - " + str(list3[1]) + " and the rent is currently " + str(list4[1])+".")
                 print(list1[2] + ", cost - " + str(list2[2])+ ", the owner is player - " + str(list3[2]) + " and the rent is currently " + str(list4[2])+".")
@@ -2411,5 +2521,7 @@ while True:
                 
         elif WhatTheyWantToDo.lower() == "add" or WhatTheyWantToDo.lower() == "ad" or WhatTheyWantToDo.lower() == "a":
                 PromotingBuildings(playerTurn)
+        #elif WhatTheyWantToDo == "adfasfsgaegaeury77234146347935632196c10381056351056371045713501":
+        #        GetAllBuildings()
         else:
                 print("What do you want to do? Roll or Look at stats?")
