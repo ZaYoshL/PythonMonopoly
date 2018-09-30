@@ -1700,7 +1700,7 @@ def TradingWithPeople(StarterOfTrade, WhoTheyWantToTrade):
         global Player2Money
         global Player3Money
         global Player4Money
-        for x in range(0, 26):
+        for x in range(0, 28):
                 list5[x] = 0
         playerOfTrade = 0
         while True:
@@ -1741,19 +1741,19 @@ def TradingWithPeople(StarterOfTrade, WhoTheyWantToTrade):
                         print("")
                         #list5[0] = 0
                         print("Player " + str(StarterOfTrade) +" can trade...")
-                        for x in range(0, 26):
+                        for x in range(0, 28):
                                  if list3[x] == StarterOfTrade:
                                          print(list1[x])
                                          
                         print("And player " + str(WhoTheyWantToTrade) + " can trade...")
-                        for x in range(0, 26):
+                        for x in range(0, 28):
                                  if list3[x] == WhoTheyWantToTrade:
                                          print(list1[x])
                         print("(Type finish when you're done. If you type the same place again, it will trade back the places to the original owner.)")                 
                         while True:
                                 #list1 = ["Mediterranean Ave.", "Baltic Ave.", "Oriental Ave.", "Vermont Ave.", "Connecticut Ave.", "St. Charles Place", "States Ave.", "Virginia Ave.","St. James Place", "Tennessee Ave.", "New York Ave.", "Kentucky Ave.","Indiana Ave.","Illinois Ave.","Atlantic Ave.","Ventnor Ave.", "Marvin Gardens", "Pacific Ave.", "North Carolina Ave.", "Pennsylvania Ave.","Park Place", "Boardwalk", "Reading Railroad", "Pennsylvania Railroad","B. & O. Railroad","Short Line Railroad"]
                                 TradingABuilding = input().lower()
-                                for x in range(0, 26):
+                                for x in range(0, 28):
                                         if TradingABuilding == list1[x].lower():
                                                 if list5[x] == WhoTheyWantToTrade or list5[x] == StarterOfTrade:
                                                         list5[x] = 0
@@ -1774,24 +1774,24 @@ def TradingWithPeople(StarterOfTrade, WhoTheyWantToTrade):
                 elif WhatTheyChoose.lower() == "finish" or WhatTheyChoose.lower() == "finis" or WhatTheyChoose.lower() == "fini" or WhatTheyChoose.lower() == "fin" or WhatTheyChoose.lower() == "fin" or WhatTheyChoose.lower() == "fi" or WhatTheyChoose.lower() == "f":
                         if playerOfTrade == 0:
                                 print("Player " + str(StarterOfTrade) + " is willing to give player "+str(WhoTheyWantToTrade) +" $"+ str(GiveMoney1) + " and")
-                                for x in range(0, 26):
+                                for x in range(0, 28):
                                         if list5[x] == WhoTheyWantToTrade:
                                                 print(list1[x] + ", ")   
                                 print("for...")
                                 print(str(GiveMoney2) + " of player " + str(WhoTheyWantToTrade)+"'s gold and ")
-                                for x in range(0, 26):
+                                for x in range(0, 28):
                                         if list5[x] == StarterOfTrade:
                                                 print(list1[x]+", ")
                                                 
                                 print("Does player " + str(WhoTheyWantToTrade) + " agree to this? (yes or no)")
                         else:
                                 print("Player " + str(WhoTheyWantToTrade) + " wants player "+str(StarterOfTrade) +" to instead give them $"+ str(GiveMoney1) + " and ")
-                                for x in range(0, 26):
+                                for x in range(0, 28):
                                         if list5[x] == WhoTheyWantToTrade:
                                                 print(list1[x] + ", ")
                                 print("for...")
                                 print("Player " + str(WhoTheyWantToTrade) +"'s $"+ str(GiveMoney2) + " and ")
-                                for x in range(0, 26):
+                                for x in range(0, 28):
                                         if list5[x] == StarterOfTrade:
                                                 print(list1[x]+", ")
                                 print("Does player " + str(StarterOfTrade) + " agree to this? (yes or no)")
@@ -1807,7 +1807,7 @@ def TradingWithPeople(StarterOfTrade, WhoTheyWantToTrade):
                                                         Player1Money += GiveMoney2
                                                         Player2Money -= GiveMoney2
                                                         Player2Money += GiveMoney1
-                                                        for x in range(0, 26):
+                                                        for x in range(0, 28):
                                                                 if list5[x] == StarterOfTrade:
                                                                         list3[x] = StarterOfTrade
                                                                 if list5[x] == WhoTheyWantToTrade:
@@ -1820,7 +1820,7 @@ def TradingWithPeople(StarterOfTrade, WhoTheyWantToTrade):
                                                         Player1Money += GiveMoney2
                                                         Player3Money -= GiveMoney2
                                                         Player3Money += GiveMoney1
-                                                        for x in range(0, 26):
+                                                        for x in range(0, 28):
                                                                 if list5[x] == StarterOfTrade:
                                                                         list3[x] = StarterOfTrade
                                                                 if list5[x] == WhoTheyWantToTrade:
@@ -1833,7 +1833,7 @@ def TradingWithPeople(StarterOfTrade, WhoTheyWantToTrade):
                                                         Player1Money += GiveMoney2
                                                         Player4Money -= GiveMoney2
                                                         Player4Money += GiveMoney1
-                                                        for x in range(0, 26):
+                                                        for x in range(0, 28):
                                                                 if list5[x] == StarterOfTrade:
                                                                         list3[x] = StarterOfTrade
                                                                 if list5[x] == WhoTheyWantToTrade:
@@ -1847,7 +1847,7 @@ def TradingWithPeople(StarterOfTrade, WhoTheyWantToTrade):
                                                         Player2Money += GiveMoney2
                                                         Player1Money -= GiveMoney2
                                                         Player1Money += GiveMoney1
-                                                        for x in range(0, 26):
+                                                        for x in range(0, 28):
                                                                 if list5[x] == StarterOfTrade:
                                                                         list3[x] = StarterOfTrade
                                                                 if list5[x] == WhoTheyWantToTrade:
@@ -1860,7 +1860,7 @@ def TradingWithPeople(StarterOfTrade, WhoTheyWantToTrade):
                                                         Player2Money += GiveMoney2
                                                         Player3Money -= GiveMoney2
                                                         Player3Money += GiveMoney1
-                                                        for x in range(0, 26):
+                                                        for x in range(0, 28):
                                                                 if list5[x] == StarterOfTrade:
                                                                         list3[x] = StarterOfTrade
                                                                 if list5[x] == WhoTheyWantToTrade:
@@ -1873,7 +1873,7 @@ def TradingWithPeople(StarterOfTrade, WhoTheyWantToTrade):
                                                         Player2Money += GiveMoney2
                                                         Player4Money -= GiveMoney2
                                                         Player4Money += GiveMoney1
-                                                        for x in range(0, 26):
+                                                        for x in range(0, 28):
                                                                 if list5[x] == StarterOfTrade:
                                                                         list3[x] = StarterOfTrade
                                                                 if list5[x] == WhoTheyWantToTrade:
@@ -1887,7 +1887,7 @@ def TradingWithPeople(StarterOfTrade, WhoTheyWantToTrade):
                                                         Player3Money += GiveMoney2
                                                         Player1Money -= GiveMoney2
                                                         Player1Money += GiveMoney1
-                                                        for x in range(0, 26):
+                                                        for x in range(0, 28):
                                                                 if list5[x] == StarterOfTrade:
                                                                         list3[x] = StarterOfTrade
                                                                 if list5[x] == WhoTheyWantToTrade:
@@ -1900,7 +1900,7 @@ def TradingWithPeople(StarterOfTrade, WhoTheyWantToTrade):
                                                         Player3Money += GiveMoney2
                                                         Player2Money -= GiveMoney2
                                                         Player2Money += GiveMoney1
-                                                        for x in range(0, 26):
+                                                        for x in range(0, 28):
                                                                 if list5[x] == StarterOfTrade:
                                                                         list3[x] = StarterOfTrade
                                                                 if list5[x] == WhoTheyWantToTrade:
@@ -1913,7 +1913,7 @@ def TradingWithPeople(StarterOfTrade, WhoTheyWantToTrade):
                                                         Player3Money += GiveMoney2
                                                         Player4Money -= GiveMoney2
                                                         Player4Money += GiveMoney1
-                                                        for x in range(0, 26):
+                                                        for x in range(0, 28):
                                                                 if list5[x] == StarterOfTrade:
                                                                         list3[x] = StarterOfTrade
                                                                 if list5[x] == WhoTheyWantToTrade:
@@ -1927,7 +1927,7 @@ def TradingWithPeople(StarterOfTrade, WhoTheyWantToTrade):
                                                         Player4Money += GiveMoney2
                                                         Player1Money -= GiveMoney2
                                                         Player1Money += GiveMoney1
-                                                        for x in range(0, 26):
+                                                        for x in range(0, 28):
                                                                 if list5[x] == StarterOfTrade:
                                                                         list3[x] = StarterOfTrade
                                                                 if list5[x] == WhoTheyWantToTrade:
@@ -1940,7 +1940,7 @@ def TradingWithPeople(StarterOfTrade, WhoTheyWantToTrade):
                                                         Player4Money += GiveMoney2
                                                         Player2Money -= GiveMoney2
                                                         Player2Money += GiveMoney1
-                                                        for x in range(0, 26):
+                                                        for x in range(0, 28):
                                                                 if list5[x] == StarterOfTrade:
                                                                         list3[x] = StarterOfTrade
                                                                 if list5[x] == WhoTheyWantToTrade:
@@ -1953,7 +1953,7 @@ def TradingWithPeople(StarterOfTrade, WhoTheyWantToTrade):
                                                         Player4Money += GiveMoney2
                                                         Player3Money -= GiveMoney2
                                                         Player3Money += GiveMoney1
-                                                        for x in range(0, 26):
+                                                        for x in range(0, 28):
                                                                 if list5[x] == StarterOfTrade:
                                                                         list3[x] = StarterOfTrade
                                                                 if list5[x] == WhoTheyWantToTrade:
@@ -2375,6 +2375,20 @@ def GetAllBuildings():
                 list3[x] = 1
         
 
+
+
+def HouseForSells(PlayerWhosSelling):
+        print("You own...")
+        for x in range(0, 28):
+                if list3[x] == StarterOfTrade:
+                        print(list1[x])
+        print("What place do you want to sell?")
+
+
+
+
+
+
 DoublesForJail = 0
 
 
@@ -2400,7 +2414,7 @@ while True:
         playerTurn = 1
     else:
         MonopolyMap()
-        print("It is currently Player " + str(playerTurn) + " Turn.\nType 'Roll' or 'r' to Roll.\nType 'Trade' or 't' to switch money/buildings with other players.\n'Add' or 'a' a house to one of your monopolies.\nType 'Stats' or 's' to learn about what people currently have and have not.")
+        print("It is currently Player " + str(playerTurn) + " Turn.\nType 'Roll' or 'r' to Roll.\nType 'Trade' or 't' to switch money/buildings with other players.\nType 'Add' or 'a' a house to one of your monopolies.\nType 'Stats' or 's' to learn about what people currently have and have not.")
         WhatTheyWantToDo = input().lower()
         if WhatTheyWantToDo.lower() == "roll" or WhatTheyWantToDo.lower() == "r" or WhatTheyWantToDo.lower() == "ro" or WhatTheyWantToDo.lower() == "rol":
                 if playerTurn == 1:
