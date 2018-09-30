@@ -2373,7 +2373,7 @@ def GetAllBuildings():
                 list3[x] = 1
         
 
-
+DoublesForJail = 0
 
 
 
@@ -2404,7 +2404,7 @@ while True:
                 if playerTurn == 1:
                     Roll = 0
                     Roll = DiceRoll(1)
-                    print("You roll a " + str(Roll) + "!\nPress Enter to Move.")
+                    print("You roll a " + str(rollOne) +" and a "+ str(rollTwo) +" Which equals "+ str(Roll) + "!\nPress Enter to Move.")
                     input()
                     if int(Player1Location + Roll) > 40:
                         Player1Money += 200
@@ -2416,7 +2416,7 @@ while True:
                 elif playerTurn == 2:
                     Roll = 0
                     Roll = DiceRoll(2)
-                    print("You roll a " + str(Roll) + "!\nPress Enter to Move.")
+                    print("You roll a " + str(rollOne) +" and a "+ str(rollTwo) +" Which equals "+ str(Roll) + "!\nPress Enter to Move.")
                     input()
                     if int(Player2Location + Roll) > 40:
                         Player2Money += 200
@@ -2428,7 +2428,7 @@ while True:
                 elif playerTurn == 3:
                     Roll = 0
                     Roll = DiceRoll(3)
-                    print("You roll a " + str(Roll) + "!\nPress Enter to Move.")
+                    print("You roll a " + str(rollOne) +" and a "+ str(rollTwo) +" Which equals "+ str(Roll) + "!\nPress Enter to Move.")
                     input()
                     if int(Player3Location + Roll) > 40:
                         Player3Money += 200
@@ -2440,7 +2440,7 @@ while True:
                 else:
                     Roll = 0
                     Roll = DiceRoll(4)
-                    print("You roll a " + str(Roll) + "!\nPress Enter to Move.")
+                    print("You roll a " + str(rollOne) +" and a "+ str(rollTwo) +" Which equals "+ str(Roll) + "!\nPress Enter to Move.")
                     input()
                     if int(Player4Location + Roll) > 40:
                         Player4Money += 200
@@ -2449,7 +2449,17 @@ while True:
                     else:
                         Player4Location += Roll
                         LandedPlaces(Player4Location, 4)
-                playerTurn += 1
+                #global rollOne
+                #print(rollOne)
+                #global rollTwo
+                #print(rollTwo)
+                if rollOne != rollTwo or DoublesForJail == 2 and rollOne == rollTwo:
+                        playerTurn += 1
+                        DoublesForJail = 0
+                else:
+                        print("Since you rolled doubles, Player " + str(playerTurn) + " gets to go again.")
+                        input()
+                        DoublesForJail += 1
         elif WhatTheyWantToDo.lower() == "stats" or WhatTheyWantToDo.lower() == "stat" or WhatTheyWantToDo.lower() == "sta" or WhatTheyWantToDo.lower() == "st" or WhatTheyWantToDo.lower() == "s":
                 #list1 is names
                 #list2 is cost of places
@@ -2461,32 +2471,6 @@ while True:
                         else:
                                 print(list1[x] + ", cost - " + str(list2[x])+ ", the owner is player - " + str(list3[x]) + " and the rent is currently " + str(list4[x])+".")
                                 
-                '''print(list1[0] + ", cost - " + str(list2[0])+ ", the owner is player - " + str(list3[0]) + " and the rent is currently " + str(list4[0])+".")
-                print(list1[1] + ", cost - " + str(list2[1])+ ", the owner is player - " + str(list3[1]) + " and the rent is currently " + str(list4[1])+".")
-                print(list1[2] + ", cost - " + str(list2[2])+ ", the owner is player - " + str(list3[2]) + " and the rent is currently " + str(list4[2])+".")
-                print(list1[3] + ", cost - " + str(list2[3])+ ", the owner is player - " + str(list3[3]) + " and the rent is currently " + str(list4[3])+".")
-                print(list1[4] + ", cost - " + str(list2[4])+ ", the owner is player - " + str(list3[4]) + " and the rent is currently " + str(list4[4])+".")
-                print(list1[5] + ", cost - " + str(list2[5])+ ", the owner is player - " + str(list3[5]) + " and the rent is currently " + str(list4[5])+".")
-                print(list1[6] + ", cost - " + str(list2[6])+ ", the owner is player - " + str(list3[6]) + " and the rent is currently " + str(list4[6])+".")
-                print(list1[7] + ", cost - " + str(list2[7])+ ", the owner is player - " + str(list3[7]) + " and the rent is currently " + str(list4[7])+".")
-                print(list1[8] + ", cost - " + str(list2[8])+ ", the owner is player - " + str(list3[8]) + " and the rent is currently " + str(list4[8])+".")
-                print(list1[9] + ", cost - " + str(list2[9])+ ", the owner is player - " + str(list3[9]) + " and the rent is currently " + str(list4[9])+".")
-                print(list1[10] + ", cost - " + str(list2[10])+ ", the owner is player - " + str(list3[10]) + " and the rent is currently " + str(list4[10])+".")
-                print(list1[11] + ", cost - " + str(list2[11])+ ", the owner is player - " + str(list3[11]) + " and the rent is currently " + str(list4[11])+".")
-                print(list1[12] + ", cost - " + str(list2[12])+ ", the owner is player - " + str(list3[12]) + " and the rent is currently " + str(list4[12])+".")
-                print(list1[13] + ", cost - " + str(list2[13])+ ", the owner is player - " + str(list3[13]) + " and the rent is currently " + str(list4[13])+".")
-                print(list1[14] + ", cost - " + str(list2[14])+ ", the owner is player - " + str(list3[14]) + " and the rent is currently " + str(list4[14])+".")
-                print(list1[15] + ", cost - " + str(list2[15])+ ", the owner is player - " + str(list3[15]) + " and the rent is currently " + str(list4[15])+".")
-                print(list1[16] + ", cost - " + str(list2[16])+ ", the owner is player - " + str(list3[16]) + " and the rent is currently " + str(list4[16])+".")
-                print(list1[17] + ", cost - " + str(list2[17])+ ", the owner is player - " + str(list3[17]) + " and the rent is currently " + str(list4[17])+".")
-                print(list1[18] + ", cost - " + str(list2[18])+ ", the owner is player - " + str(list3[18]) + " and the rent is currently " + str(list4[18])+".")
-                print(list1[19] + ", cost - " + str(list2[19])+ ", the owner is player - " + str(list3[19]) + " and the rent is currently " + str(list4[19])+".")
-                print(list1[20] + ", cost - " + str(list2[20])+ ", the owner is player - " + str(list3[20]) + " and the rent is currently " + str(list4[20])+".")
-                print(list1[21] + ", cost - " + str(list2[21])+ ", the owner is player - " + str(list3[21]) + " and the rent is currently " + str(list4[21])+".")
-                print(list1[22] + ", cost - " + str(list2[22])+ ", the owner is player - " + str(list3[22]) + " and the rent is currently " + str(list4[22])+".")
-                print(list1[23] + ", cost - " + str(list2[23])+ ", the owner is player - " + str(list3[23]) + " and the rent is currently " + str(list4[23])+".")
-                print(list1[24] + ", cost - " + str(list2[24])+ ", the owner is player - " + str(list3[24]) + " and the rent is currently " + str(list4[24])+".")
-                print(list1[25] + ", cost - " + str(list2[25])+ ", the owner is player - " + str(list3[25]) + " and the rent is currently " + str(list4[25])+".")'''
                 print("Press enter to continue.")
                 input()
         elif WhatTheyWantToDo.lower() == "trade" or WhatTheyWantToDo.lower() == "t" or WhatTheyWantToDo.lower() == "tr" or WhatTheyWantToDo.lower() == "tra" or WhatTheyWantToDo.lower() == "trad":
