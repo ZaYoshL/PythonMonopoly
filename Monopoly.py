@@ -918,6 +918,8 @@ def DiceRoll(y):
         global rollTwo
         rollOne = random.randint(1, 6)
         rollTwo = random.randint(1, 6)
+        #rollOne = 1
+        #rollTwo = 1
         return rollOne + rollTwo
 
 
@@ -2406,49 +2408,69 @@ while True:
                     Roll = DiceRoll(1)
                     print("You roll a " + str(rollOne) +" and a "+ str(rollTwo) +" Which equals "+ str(Roll) + "!\nPress Enter to Move.")
                     input()
-                    if int(Player1Location + Roll) > 40:
-                        Player1Money += 200
-                        Player1Location = int(Player1Location + Roll) - 40
-                        LandedPlaces(Player1Location, 1)
+                    if DoublesForJail == 2 and rollOne == rollTwo:
+                            print("Player 1 has rolled 3 doubles in a roll, automatically making them go to jail.")
+                            Player1InJail = 1
+                            Player1Location = 11
                     else:
-                        Player1Location += Roll
-                        LandedPlaces(Player1Location, 1)
+                            if int(Player1Location + Roll) > 40:
+                                Player1Money += 200
+                                Player1Location = int(Player1Location + Roll) - 40
+                                LandedPlaces(Player1Location, 1)
+                            else:
+                                Player1Location += Roll
+                                LandedPlaces(Player1Location, 1)
                 elif playerTurn == 2:
                     Roll = 0
                     Roll = DiceRoll(2)
                     print("You roll a " + str(rollOne) +" and a "+ str(rollTwo) +" Which equals "+ str(Roll) + "!\nPress Enter to Move.")
                     input()
-                    if int(Player2Location + Roll) > 40:
-                        Player2Money += 200
-                        Player2Location = int(Player2Location + Roll) - 40
-                        LandedPlaces(Player2Location, 2)
+                    if DoublesForJail == 2 and rollOne == rollTwo:
+                            print("Player 2 has rolled 3 doubles in a roll, automatically making them go to jail.")
+                            Player2InJail = 1
+                            Player2Location = 11
                     else:
-                        Player2Location += Roll
-                        LandedPlaces(Player2Location, 2)
+                            if int(Player2Location + Roll) > 40:
+                                Player2Money += 200
+                                Player2Location = int(Player2Location + Roll) - 40
+                                LandedPlaces(Player2Location, 2)
+                            else:
+                                Player2Location += Roll
+                                LandedPlaces(Player2Location, 2)
                 elif playerTurn == 3:
                     Roll = 0
                     Roll = DiceRoll(3)
                     print("You roll a " + str(rollOne) +" and a "+ str(rollTwo) +" Which equals "+ str(Roll) + "!\nPress Enter to Move.")
                     input()
-                    if int(Player3Location + Roll) > 40:
-                        Player3Money += 200
-                        Player3Location = int(Player3Location + Roll) - 40
-                        LandedPlaces(Player3Location, 3)
+                    if DoublesForJail == 2 and rollOne == rollTwo:
+                            print("Player 3 has rolled 3 doubles in a roll, automatically making them go to jail.")
+                            Player3InJail = 1
+                            Player3Location = 11
                     else:
-                        Player3Location += Roll
-                        LandedPlaces(Player3Location, 3)
+                            if int(Player3Location + Roll) > 40:
+                                Player3Money += 200
+                                Player3Location = int(Player3Location + Roll) - 40
+                                LandedPlaces(Player3Location, 3)
+                            else:
+                                Player3Location += Roll
+                                LandedPlaces(Player3Location, 3)
                 else:
                     Roll = 0
                     Roll = DiceRoll(4)
                     print("You roll a " + str(rollOne) +" and a "+ str(rollTwo) +" Which equals "+ str(Roll) + "!\nPress Enter to Move.")
                     input()
-                    if int(Player4Location + Roll) > 40:
-                        Player4Money += 200
-                        Player4Location = int(Player4Location + Roll) - 40
-                        LandedPlaces(Player4Location, 4)
+                    if DoublesForJail == 2 and rollOne == rollTwo:
+                            print("Player 4 has rolled 3 doubles in a roll, automatically making them go to jail.")
+                            Player4InJail = 1
+                            Player4Location = 11
                     else:
-                        Player4Location += Roll
-                        LandedPlaces(Player4Location, 4)
+                            if int(Player4Location + Roll) > 40:
+                                Player4Money += 200
+                                Player4Location = int(Player4Location + Roll) - 40
+                                LandedPlaces(Player4Location, 4)
+                            else:
+                                Player4Location += Roll
+                                LandedPlaces(Player4Location, 4)
                 #global rollOne
                 #print(rollOne)
                 #global rollTwo
