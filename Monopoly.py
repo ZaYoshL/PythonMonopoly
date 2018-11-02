@@ -2577,19 +2577,19 @@ def HouseForSells(PlayerWhosSelling):
         global Player2Money
         global Player3Money
         global Player4Money
+        global list3
+        global list1
         YESNO = ""
         for x in range(0, 28):
                 if list3[x] == PlayerWhosSelling:
-                        print(list1[x])
+                        print(str(x) +" - "+list1[x])
         print("What place do you want to sell?(Type all buildings. Type f to finish)")
         while True:
                 s = "" + input()
-                try:
-                        s.lower()
-                except:
-                        print("Whatever you put can't be put into lowercase. Please only use letters for this. \nRecommendation - copy and paste the name of the building you want to sell from the list given.")
-                        s = ""
-                if s == 'f':
+                for x in range(0, 28):
+                        if list1[x] == s and PlayerWhosSelling == list3[x] or s == ("" + str(x)) and PlayerWhosSelling == list3[x]:
+                                print(list1[x])
+                if s == 'f' or s == 'fi' or s == 'fin' or s == 'fini' or s == 'finis' or s == 'finish':
                         if PlayerWhosSelling == 1 and Player1Money > 0 or PlayerWhosSelling == 2 and Player2Money > 0 or PlayerWhosSelling == 3 and Player3Money > 0 or PlayerWhosSelling == 4 and Player4Money > 0:
                                 break
                         else:
@@ -2608,6 +2608,7 @@ def HouseForSells(PlayerWhosSelling):
                                                 print("That is not yes or no. Please only use one of those 2 words.")
                                 if YESNO == "yes" or YESNO == "ye" or YESNO == "y":
                                         break
+                
 
 DicePictures = ['''
   _________ 
