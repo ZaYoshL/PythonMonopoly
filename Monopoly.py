@@ -924,7 +924,14 @@ def DiceRoll(y):
         rollTwo = 1
         rollOne = random.randint(1, 6)
         rollTwo = random.randint(1, 6)
-        print(DicePictures[rollOne-1] + " " + DicePictures[rollTwo-1])
+        s = DicePictures[rollOne-1] + " " + DicePictures[rollTwo-1] #12 left, 6 down 7 total
+        #ss = ""
+        #for i in range(0, 11):
+        #        for ii in range(1, 6):
+        #                ss += Substr(s, ii, i)
+        #        ss += "\n"
+                        
+        print(s)
         return rollOne + rollTwo
 
 
@@ -2331,52 +2338,309 @@ def CommunityChest(PlayerEffected):
 
 #def ElectricCompanyWaterWorks(PlayerWhoLandedOnOneOfThem, LandedOn):
 #        print()
-def GetAllBuildings():
-        for x in range(0, 28):
-                list3[x] = 1
+#def GetAllBuildings():
+#        for x in range(0, 28):
+#                list3[x] = 1
         
-
+def debugMode(PlayerDebug): #heyguysimdefinitelynotcheatingandijustlikelytypingveryuselesslongwordsallwithoutausinganyspaces
+        global Player1Money
+        global Player2Money
+        global Player3Money
+        global Player4Money
+        global list1
+        global list2
+        global list3
+        global list4
+        global list5
+        global GreenHouses
+        global RedHotels
+        global Player1InJail
+        global Player2InJail
+        global Player3InJail
+        global Player4InJail
+        global Player1Location
+        global Player2Location
+        global Player3Location
+        global Player4Location
+        print("Welcome to the place to change Ints/Strings, test different defs, and random funny things. (In no predictular order)\n(Also with no fail safes, so if you puta String for an int... You can get an error if the int isn't change before it is called to be use)")
+        print("1 - Player in debug mode gets all buildings\n2 - Player in debug money == -69\n3 - Community Chest\n4 - Chance Time\n5 - Everything is free!!!\n6 - Make houses amount the same amount\n7 - Change list 1\n8 - Change list 2\n9 - Change list 3\n10 - Change list 4\n11 - Change list 5\n12 - Change Everyone Money Amount")
+        print("13 - Choice who is in jail\n14 - Move somewhere and activate its effect\n15 - Just move everyone somewhere\n16 - Test GameOver()\n17 - Test MONOPOLY()\n18 - Test DiceRoll()\n19 - Retest HowManyPlayers()\n20 - Test UseTheList()\n21 - Test dice picture\n22 - Change free parking amount")
+        print("23 - Change all useless rent ints\n24 - Change all useless house own int\n25 - Give everyone random buildings")
+        s = "" + input()
+        if s == "1":
+                for x in range(0, 28):
+                        list3[x] = PlayerDebug
+        elif s == "2":
+                if PlayerDebug == 1:
+                        Player1Money = -69
+                if PlayerDebug == 2:
+                        Player2Money = -69
+                if PlayerDebug == 3:
+                        Player3Money = -69
+                if PlayerDebug == 4:
+                        Player4Money = -69
+        elif s == "3":
+                CommunityChest(PlayerDebug)
+        elif s == "4":
+                ChanceTime(PlayerDebug)
+        elif s == "5":
+                for x in range(0, 28):
+                        list2[x] = 0
+        elif s == "6":
+                GreenHouses = input()
+                RedHotels = input()
+        elif s == "7":
+                for x in range(0, 28):
+                        list1[x] = ""+input()
+        elif s == "8":
+                for x in range(0, 28):
+                        list2[x] = ""+input()
+        elif s == "9":
+                for x in range(0, 28):
+                        list3[x] = ""+input()
+        elif s == "10":
+                for x in range(0, 28):
+                        list4[x] = ""+input()
+        elif s == "11":
+                for x in range(0, 28):
+                        list5[x] = ""+input()
+        elif s == "12":
+                Player1Money = input()
+                Player2Money = input()
+                Player3Money = input()
+                Player4Money = input()
+        elif s == "13":
+                Player1InJail = input()
+                Player1InJail = input()
+                Player1InJail = input()
+                Player1InJail = input()
+        elif s == "14":
+                PlayToGo = input()
+                LandedPlaces(PlayToGo, PlayerDebug)
+        elif s == "15":
+                Player1Location = input()
+                Player2Location = input()
+                if Player3Location != 99999:
+                        Player3Location = input()
+                if Player4Location != 99999:
+                        Player4Location = input()
+        elif s == "16":
+                GameOver()
+        elif s == "17":
+                MONOPOLY()
+        elif s == "18":
+                DiceRoll(PlayerDebug)
+        elif s == "19":
+                HowManyPlayers()
+        elif s == "20":
+                PlayToGo = input()
+                UseTheList(PlayToGo, PlayerDebug)
+        elif s == "21":
+                Picture = input()
+                print(DicePictures[Picture])
+        elif s == "22":
+                global FreeParkingMoney
+                FreeParkingMoney = input()
+        elif s == "23":
+                global MediterraneanAveRent
+                global BalticAveRent
+                global ReadingRailroadRent
+                global OrientalAveRent
+                global VermontAveRent
+                global ConnecticutAveRent
+                global StCharlesPlaceRent
+                global ElectricCompanyRent
+                global StatesAveRent
+                global VirginiaAveRent
+                global PennsylvaniaRailroadRent
+                global StJamesPlaceRent
+                global TennesseeAveRent
+                global NewYorkAveRent
+                global KentuckyAveRent
+                global IndianaAveRent
+                global IllinoisAveRent
+                global BORailroadRent
+                global AtlanticAveRent
+                global VentnorAveRent
+                global WaterWorksRent
+                global MarvinGardensRent
+                global PacificAveRent
+                global NorthCarolinaAveRent
+                global PennsylvaniaAveRent
+                global ShortLineRailroadRent
+                global ParkPlaceRent
+                global BoardwalkRent
+                
+                MediterraneanAveRent = input()
+                BalticAveRent = input()
+                ReadingRailroadRent = input()
+                OrientalAveRent = input()
+                VermontAveRent = input()
+                ConnecticutAveRent = input()
+                StCharlesPlaceRent = input()
+                ElectricCompanyRent = input()
+                StatesAveRent = input()
+                VirginiaAveRent = input()
+                PennsylvaniaRailroadRent = input()
+                StJamesPlaceRent = input()
+                TennesseeAveRent = input()
+                NewYorkAveRent = input()
+                KentuckyAveRent = input()
+                IndianaAveRent = input()
+                IllinoisAveRent = input()
+                BORailroadRent = input()
+                AtlanticAveRent = input()
+                VentnorAveRent = input()
+                WaterWorksRent = input()
+                MarvinGardensRent = input()
+                PacificAveRent = input()
+                NorthCarolinaAveRent = input()
+                PennsylvaniaAveRent = input()
+                ShortLineRailroadRent = input()
+                ParkPlaceRent = input()
+                BoardwalkRent = input()
+        elif s == "24":
+                global MediterraneanAve
+                global BalticAve
+                global ReadingRailroad
+                global OrientalAve
+                global VermontAve
+                global ConnecticutAve
+                global StCharlesPlace
+                global ElectricCompany
+                global StatesAve
+                global VirginiaAve
+                global PennsylvaniaRailroad
+                global StJamesPlace
+                global TennesseeAve
+                global NewYorkAve
+                global KentuckyAve
+                global IndianaAve
+                global IllinoisAve
+                global BORailroad
+                global AtlanticAve
+                global VentnorAve
+                global WaterWorks
+                global MarvinGardens
+                global PacificAve
+                global NorthCarolinaAve
+                global PennsylvaniaAve
+                global ShortLineRailroad
+                global ParkPlace
+                global Boardwalk
+                
+                MediterraneanAve = input()
+                BalticAve = input()
+                ReadingRailroad = input()
+                OrientalAve = input()
+                VermontAve = input()
+                ConnecticutAve = input()
+                StCharlesPlace = input()
+                ElectricCompany = input()
+                StatesAve = input()
+                VirginiaAve = input()
+                PennsylvaniaRailroad = input()
+                StJamesPlace = input()
+                TennesseeAve = input()
+                NewYorkAve = input()
+                FreeParkingMoney = input()
+                KentuckyAve = input()
+                IndianaAve = input()
+                IllinoisAve = input()
+                BORailroad = input()
+                AtlanticAve = input()
+                VentnorAve = input()
+                WaterWorks = input()
+                MarvinGardens = input()
+                PacificAve = input()
+                NorthCarolinaAve = input()
+                PennsylvaniaAve = input()
+                ShortLineRailroad = input()
+                ParkPlace = input()
+                Boardwalk = input()
+        elif s == "25":
+                if Player3Location == 99999:
+                        for x in range(0, 28):
+                                list3[x] = random.randint(1, 2)
+                elif Player4Location == 99999:
+                        for x in range(0, 28):
+                                list3[x] = random.randint(1, 3)
+                else:
+                        for x in range(0, 28):
+                                list3[x] = random.randint(1, 4)
+                
 
 
 def HouseForSells(PlayerWhosSelling):
         print("You own...")
+        global Player1Money
+        global Player2Money
+        global Player3Money
+        global Player4Money
+        YESNO = ""
         for x in range(0, 28):
-                if list3[x] == StarterOfTrade:
+                if list3[x] == PlayerWhosSelling:
                         print(list1[x])
-        print("What place do you want to sell?")
+        print("What place do you want to sell?(Type all buildings. Type f to finish)")
+        while True:
+                s = "" + input()
+                try:
+                        s.lower()
+                except:
+                        print("Whatever you put can't be put into lowercase. Please only use letters for this. \nRecommendation - copy and paste the name of the building you want to sell from the list given.")
+                        s = ""
+                if s == 'f':
+                        if PlayerWhosSelling == 1 and Player1Money > 0 or PlayerWhosSelling == 2 and Player2Money > 0 or PlayerWhosSelling == 3 and Player3Money > 0 or PlayerWhosSelling == 4 and Player4Money > 0:
+                                break
+                        else:
+                                print("Are you sure? You're going to become bankrupt, ending the game.")
+                                while True:
+                                        YESNO = "" + input()
+                                        try:
+                                                s.lower()
+                                        except:
+                                                print("Error, whatever you put is not a letter.")
+                                        if YESNO == "yes" or YESNO == "ye" or YESNO == "y":
+                                                break
+                                        elif YESNO == "no" or YESNO == "n":
+                                                break
+                                        else:
+                                                print("That is not yes or no. Please only use one of those 2 words.")
+                                if YESNO == "yes" or YESNO == "ye" or YESNO == "y":
+                                        break
 
 DicePictures = ['''
-  _________
+  _________ 
  |         |
  |         |
  |    0    |
  |         |
  |_________|''','''
-  _________
+  _________ 
  |         |
  |  0      |
  |         |
  |      0  |
  |_________|''','''
-  _________
+  _________ 
  |         |
  |  0      |
  |    0    |
  |      0  |
  |_________|''','''
-  _________
+  _________ 
  |         |
  |  0   0  |
  |         |
  |  0   0  |
  |_________|''','''
-  _________
+  _________ 
  |         |
  |  0   0  |
  |    0    |
  |  0   0  |
  |_________|''','''
-  _________
+  _________ 
  |         |
  |  0   0  |
  |  0   0  |
@@ -2602,7 +2866,14 @@ while True:
                 
         elif WhatTheyWantToDo.lower() == "add" or WhatTheyWantToDo.lower() == "ad" or WhatTheyWantToDo.lower() == "a":
                 PromotingBuildings(playerTurn)
+        elif WhatTheyWantToDo.lower() == "sell":
+                HouseForSells(playerTurn)
+        elif WhatTheyWantToDo.lower() == "heyguysimdefinitelynotcheatingandijustlikelytypingveryuselesslongwordsallwithoutausinganyspaces":
+                print("Debug mode.")
+                debugMode(playerTurn)
         #elif WhatTheyWantToDo == "adfasfsgaegaeury77234146347935632196c10381056351056371045713501":
         #        GetAllBuildings()
+        #elif WhatTheyWantToDo.lower() == "imgoingbroke":
+        #        Player1Money = -69
         else:
                 print("What do you want to do? Roll or Look at stats?")
