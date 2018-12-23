@@ -1,6 +1,7 @@
 import random
 import sys
 import math
+import os
 #import randint
 
 Player1Money = 2000 #Money to start with
@@ -15,880 +16,10 @@ Player1InJail = 0
 Player2InJail = 0
 Player3InJail = 0
 Player4InJail = 0
-
-def MonopolyMap():
-        print('''
-                 _________________________________________________________________________________________________________________________________________________________
-                |Just visiting|St. Charles  |Electric     |States Ave.  |Virginia Ave.|Pennsylvania |St. James    |Community    |Tennessee    |New York Ave.|Free Parking |
-                |             |Place        |Company      |             |             |Railroad     |Place        |Chest        |Ave.         |             |             |''')
-        OnJustVisiting = "                |"#If Players are visiting jail
-        if Player1Location == 11 and Player1InJail == 0:#If Player 1 Is visiting jail
-            OnJustVisiting += "1 "#If Player 1 Is visiting jail
-        else:#If Player 1 Is visiting jail
-            OnJustVisiting += "  "#If Player 1 Is visiting jail
-        if Player2Location == 11 and Player2InJail == 0:#If Player 2 Is visiting jail
-            OnJustVisiting += "2 "#If Player 2 Is visiting jail
-        else:#If Player 2 Is visiting jail
-            OnJustVisiting += "  "#If Player 2 Is visiting jail
-        if Player3Location == 11 and Player3InJail == 0:#If Player 3 Is visiting jail
-            OnJustVisiting += "3 "#If Player 3 Is visiting jail
-        else:#If Player 3 Is visiting jail
-            OnJustVisiting += "  "#If Player 3 Is visiting jail
-        if Player4Location == 11 and Player4InJail == 0:#If Player 4 Is visiting jail
-            OnJustVisiting += "4 "#If Player 4 Is visiting jail
-        else:#If Player 4 Is visiting jail
-            OnJustVisiting += "  "#If Player 4 Is visiting jail
-
-            
-        OnJustVisiting += "     |             |             |             |             |             |             |             |             |             |             |"             
-        print(OnJustVisiting)
-        print('''                |In Jail      |Price - 140  |Price - 150  |Price - 140  |Price - 160  |Price - 200  |Price - 180  |             |Price - 180  |Price - 200  |             |''')
-
-
-        PlayersOnTopRow = "                |"#If Players are in the top row
-        if Player1Location == 11 and Player1InJail == 1:#If player 1 is in jail
-            PlayersOnTopRow += "1 "#If player 1 is in jail
-        else:#If player 1 is in jail
-            PlayersOnTopRow += "  "#If player 1 is in jail
-        if Player1Location == 11 and Player2InJail == 1:#If player 2 is in jail
-            PlayersOnTopRow += "2 "#If player 2 is in jail
-        else:#If player 2 is in jail
-            PlayersOnTopRow += "  "#If player 2 is in jail
-        if Player1Location == 11 and Player3InJail == 1:#If player 3 is in jail
-            PlayersOnTopRow += "3 "#If player 3 is in jail
-        else:#If player 3 is in jail
-            PlayersOnTopRow += "  "#If player 3 is in jail
-        if Player1Location == 11 and Player4InJail == 1:#If player 4 is in jail
-            PlayersOnTopRow += "4 "#If player 4 is in jail
-        else:#If player 4 is in jail
-            PlayersOnTopRow += "  "#If player 4 is in jail
-
-            
-        PlayersOnTopRow += "     |"
-        if Player1Location == 12:#If player 1 is on St. Charles Place
-            PlayersOnTopRow += "1 "#If player 1 is on St. Charles Place
-        else:#If player 1 is on St. Charles Place
-            PlayersOnTopRow += "  "#If player 1 is on St. Charles Place
-        if Player2Location == 12:#If player 2 is on St. Charles Place
-            PlayersOnTopRow += "2 "#If player 2 is on St. Charles Place
-        else:##If player 2 is on St. Charles Place
-            PlayersOnTopRow += "  "#If player 2 is on St. Charles Place
-        if Player3Location == 12:#If player 3 is on St. Charles Place
-            PlayersOnTopRow += "3 "#If player 3 is on St. Charles Place
-        else:#If player 3 is on St. Charles Place
-            PlayersOnTopRow += "  "#If player 3 is on St. Charles Place
-        if Player4Location == 12:#If player 4 is on St. Charles Place
-            PlayersOnTopRow += "4 "#If player 4 is on St. Charles Place
-        else:#If player 4 is on St. Charles Place
-            PlayersOnTopRow += "  "#If player 4 is on St. Charles Place
-
-            
-        PlayersOnTopRow += "     |"
-        if Player1Location == 13:#If player 1 is on Electric Company
-            PlayersOnTopRow += "1 "#If player 1 is on Electric Company
-        else:#If player 1 is on Electric Company
-            PlayersOnTopRow += "  "#If player 1 is on Electric Company
-        if Player2Location == 13:#If player 2 is on Electric Company
-            PlayersOnTopRow += "2 "#If player 2 is on Electric Company
-        else:##If player 2 is on Electric Company
-            PlayersOnTopRow += "  "#If player 2 is on Electric Company
-        if Player3Location == 13:#If player 3 is on Electric Company
-            PlayersOnTopRow += "3 "#If player 3 is on Electric Company
-        else:#If player 3 is on Electric Company
-            PlayersOnTopRow += "  "#If player 3 is on Electric Company
-        if Player4Location == 13:#If player 4 is on Electric Company
-            PlayersOnTopRow += "4 "#If player 4 is on Electric Company
-        else:#If player 4 is on Electric Company
-            PlayersOnTopRow += "  "#If player 4 is on Electric Company
-
-            
-        PlayersOnTopRow += "     |"
-        if Player1Location == 14:#If player 1 is on States Ave.
-            PlayersOnTopRow += "1 "#If player 1 is on States Ave.
-        else:#If player 1 is on States Ave.
-            PlayersOnTopRow += "  "#If player 1 is on States Ave.
-        if Player2Location == 14:#If player 2 is on States Ave.
-            PlayersOnTopRow += "2 "#If player 2 is on States Ave.
-        else:##If player 2 is on States Ave.
-            PlayersOnTopRow += "  "#If player 2 is on States Ave.
-        if Player3Location == 14:#If player 3 is on States Ave.
-            PlayersOnTopRow += "3 "#If player 3 is on States Ave.
-        else:#If player 3 is on States Ave.
-            PlayersOnTopRow += "  "#If player 3 is on States Ave.
-        if Player4Location == 14:#If player 4 is on States Ave.
-            PlayersOnTopRow += "4 "#If player 4 is on States Ave.
-        else:#If player 4 is on States Ave.
-            PlayersOnTopRow += "  "#If player 4 is on States Ave.
-            
-            
-        PlayersOnTopRow += "     |"
-        if Player1Location == 15:#If player 1 is on Virginia Ave.
-            PlayersOnTopRow += "1 "#If player 1 is on Virginia Ave.
-        else:#If player 1 is on Virginia Ave.
-            PlayersOnTopRow += "  "#If player 1 is on Virginia Ave.
-        if Player2Location == 15:#If player 2 is on Virginia Ave.
-            PlayersOnTopRow += "2 "#If player 2 is on Virginia Ave.
-        else:##If player 2 is on Virginia Ave.
-            PlayersOnTopRow += "  "#If player 2 is on Virginia Ave.
-        if Player3Location == 15:#If player 3 is on Virginia Ave.
-            PlayersOnTopRow += "3 "#If player 3 is on Virginia Ave.
-        else:#If player 3 is on Virginia Ave.
-            PlayersOnTopRow += "  "#If player 3 is on Virginia Ave.
-        if Player4Location == 15:#If player 4 is on Virginia Ave.
-            PlayersOnTopRow += "4 "#If player 4 is on Virginia Ave.
-        else:#If player 4 is on Virginia Ave.
-            PlayersOnTopRow += "  "#If player 4 is on Virginia Ave.
-                 
-            
-        PlayersOnTopRow += "     |"
-        if Player1Location == 16:#If player 1 is on Pennsylvania Railroad
-            PlayersOnTopRow += "1 "#If player 1 is on Pennsylvania Railroad
-        else:#If player 1 is on Pennsylvania Railroad
-            PlayersOnTopRow += "  "#If player 1 is on Pennsylvania Railroad
-        if Player2Location == 16:#If player 2 is on Pennsylvania Railroad
-            PlayersOnTopRow += "2 "#If player 2 is on Pennsylvania Railroad
-        else:##If player 2 is on Pennsylvania Railroad
-            PlayersOnTopRow += "  "#If player 2 is on Pennsylvania Railroad
-        if Player3Location == 16:#If player 3 is on Pennsylvania Railroad
-            PlayersOnTopRow += "3 "#If player 3 is on Pennsylvania Railroad
-        else:#If player 3 is on Pennsylvania Railroad
-            PlayersOnTopRow += "  "#If player 3 is on Pennsylvania Railroad
-        if Player4Location == 16:#If player 4 is on Pennsylvania Railroad
-            PlayersOnTopRow += "4 "#If player 4 is on Pennsylvania Railroad
-        else:#If player 4 is on Pennsylvania Railroad
-            PlayersOnTopRow += "  "#If player 4 is on Pennsylvania Railroad
-           
-            
-        PlayersOnTopRow += "     |"
-        if Player1Location == 17:#If player 1 is on St. James Place
-            PlayersOnTopRow += "1 "#If player 1 is on St. James Place
-        else:#If player 1 is on St. James Place
-            PlayersOnTopRow += "  "#If player 1 is on St. James Place
-        if Player2Location == 17:#If player 2 is on St. James Place
-            PlayersOnTopRow += "2 "#If player 2 is on St. James Place
-        else:##If player 2 is on St. James Place
-            PlayersOnTopRow += "  "#If player 2 is on St. James Place
-        if Player3Location == 17:#If player 3 is on St. James Place
-            PlayersOnTopRow += "3 "#If player 3 is on St. James Place
-        else:#If player 3 is on St. James Place
-            PlayersOnTopRow += "  "#If player 3 is on St. James Place
-        if Player4Location == 17:#If player 4 is on St. James Place
-            PlayersOnTopRow += "4 "#If player 4 is on St. James Place
-        else:#If player 4 is on St. James Place
-            PlayersOnTopRow += "  "#If player 4 is on St. James Place
-                 
-            
-        PlayersOnTopRow += "     |"
-        if Player1Location == 18:#If player 1 is on Community Chest
-            PlayersOnTopRow += "1 "#If player 1 is on Community Chest
-        else:#If player 1 is on Community Chest
-            PlayersOnTopRow += "  "#If player 1 is on Community Chest
-        if Player2Location == 18:#If player 2 is on Community Chest
-            PlayersOnTopRow += "2 "#If player 2 is on Community Chest
-        else:##If player 2 is on Community Chest
-            PlayersOnTopRow += "  "#If player 2 is on Community Chest
-        if Player3Location == 18:#If player 3 is on Community Chest
-            PlayersOnTopRow += "3 "#If player 3 is on Community Chest
-        else:#If player 3 is on Community Chest
-            PlayersOnTopRow += "  "#If player 3 is on Community Chest
-        if Player4Location == 18:#If player 4 is on Community Chest
-            PlayersOnTopRow += "4 "#If player 4 is on Community Chest
-        else:#If player 4 is on Community Chest
-            PlayersOnTopRow += "  "#If player 4 is on Community Chest
-                      
-            
-        PlayersOnTopRow += "     |"
-        if Player1Location == 19:#If player 1 is on Tennessee Ave.
-            PlayersOnTopRow += "1 "#If player 1 is on Tennessee Ave.
-        else:#If player 1 is on Tennessee Ave.
-            PlayersOnTopRow += "  "#If player 1 is on Tennessee Ave.
-        if Player2Location == 19:#If player 2 is on Tennessee Ave.
-            PlayersOnTopRow += "2 "#If player 2 is on Tennessee Ave.
-        else:##If player 2 is on Tennessee Ave.
-            PlayersOnTopRow += "  "#If player 2 is on Tennessee Ave.
-        if Player3Location == 19:#If player 3 is on Tennessee Ave.
-            PlayersOnTopRow += "3 "#If player 3 is on Tennessee Ave.
-        else:#If player 3 is on Tennessee Ave.
-            PlayersOnTopRow += "  "#If player 3 is on Tennessee Ave.
-        if Player4Location == 19:#If player 4 is on Tennessee Ave.
-            PlayersOnTopRow += "4 "#If player 4 is on Tennessee Ave.
-        else:#If player 4 is on Tennessee Ave.
-            PlayersOnTopRow += "  "#If player 4 is on Tennessee Ave.
-                          
-            
-        PlayersOnTopRow += "     |"
-        if Player1Location == 20:#If player 1 is on New York Ave.
-            PlayersOnTopRow += "1 "#If player 1 is on New York Ave.
-        else:#If player 1 is on New York Ave.
-            PlayersOnTopRow += "  "#If player 1 is on New York Ave.
-        if Player2Location == 20:#If player 2 is on New York Ave.
-            PlayersOnTopRow += "2 "#If player 2 is on New York Ave.
-        else:##If player 2 is on New York Ave.
-            PlayersOnTopRow += "  "#If player 2 is on New York Ave.
-        if Player3Location == 20:#If player 3 is on New York Ave.
-            PlayersOnTopRow += "3 "#If player 3 is on New York Ave.
-        else:#If player 3 is on New York Ave.
-            PlayersOnTopRow += "  "#If player 3 is on New York Ave.
-        if Player4Location == 20:#If player 4 is on New York Ave.
-            PlayersOnTopRow += "4 "#If player 4 is on New York Ave.
-        else:#If player 4 is on New York Ave.
-            PlayersOnTopRow += "  "#If player 4 is on New York Ave.
-                                      
-            
-        PlayersOnTopRow += "     |"
-        if Player1Location == 21:#If player 1 is on Free Parking
-            PlayersOnTopRow += "1 "#If player 1 is on Free Parking
-        else:#If player 1 is on Free Parking
-            PlayersOnTopRow += "  "#If player 1 is on Free Parking
-        if Player2Location == 21:#If player 2 is on Free Parking
-            PlayersOnTopRow += "2 "#If player 2 is on Free Parking
-        else:##If player 2 is on Free Parking
-            PlayersOnTopRow += "  "#If player 2 is on Free Parking
-        if Player3Location == 21:#If player 3 is on Free Parking
-            PlayersOnTopRow += "3 "#If player 3 is on Free Parking
-        else:#If player 3 is on Free Parking
-            PlayersOnTopRow += "  "#If player 3 is on Free Parking
-        if Player4Location == 21:#If player 4 is on Free Parking
-            PlayersOnTopRow += "4 "#If player 4 is on Free Parking
-        else:#If player 4 is on Free Parking
-            PlayersOnTopRow += "  "#If player 4 is on Free Parking
-        PlayersOnTopRow += "     |"
-        print(PlayersOnTopRow)        
-        print('''                |_____________|_____________|_____________|_____________|_____________|_____________|_____________|_____________|_____________|_____________|_____________|
-                |Connecticut  |                                                                                                                             |Kentucky Ave.|
-                |Ave.         |                                                                                                                             |             |
-                |Price - 120  |                                                                                                                             |Price - 220  |''')
-
-
-        ConnecticutKentucky = "                |"
-        if Player1Location == 10:#If player 1 is on Connecticut Ave.
-            ConnecticutKentucky += "1 "#If player 1 is on Connecticut Ave.
-        else:#If player 1 is on Connecticut Ave.
-            ConnecticutKentucky += "  "#If player 1 is on Connecticut Ave.
-        if Player2Location == 10:#If player 2 is on Connecticut Ave.
-            ConnecticutKentucky += "2 "#If player 2 is on Connecticut Ave.
-        else:##If player 2 is on Connecticut Ave.
-            ConnecticutKentucky += "  "#If player 2 is on Connecticut Ave.
-        if Player3Location == 10:#If player 3 is on Connecticut Ave.
-            ConnecticutKentucky += "3 "#If player 3 is on Connecticut Ave.
-        else:#If player 3 is on Connecticut Ave.
-            ConnecticutKentucky += "  "#If player 3 is on Connecticut Ave.
-        if Player4Location == 10:#If player 4 is on Connecticut Ave.
-            ConnecticutKentucky += "4 "#If player 4 is on Connecticut Ave.
-        else:#If player 4 is on Connecticut Ave.
-            ConnecticutKentucky += "  "#If player 4 is on Connecticut Ave.
-
-            
-        ConnecticutKentucky += "     |                                                                                                                             |"
-        if Player1Location == 22:#If player 1 is on Kentucky Ave.
-            ConnecticutKentucky += "1 "#If player 1 is on Kentucky Ave.
-        else:#If player 1 is on Kentucky Ave.
-            ConnecticutKentucky += "  "#If player 1 is on Kentucky Ave.
-        if Player2Location == 22:#If player 2 is on Kentucky Ave.
-            ConnecticutKentucky += "2 "#If player 2 is on Kentucky Ave.
-        else:##If player 2 is on Kentucky Ave.
-            ConnecticutKentucky += "  "#If player 2 is on Kentucky Ave.
-        if Player3Location == 22:#If player 3 is on Kentucky Ave.
-            ConnecticutKentucky += "3 "#If player 3 is on Kentucky Ave.
-        else:#If player 3 is on Kentucky Ave.
-            ConnecticutKentucky += "  "#If player 3 is on Kentucky Ave.
-        if Player4Location == 22:#If player 4 is on Kentucky Ave.
-            ConnecticutKentucky += "4 "#If player 4 is on Kentucky Ave.
-        else:#If player 4 is on Kentucky Ave.
-            ConnecticutKentucky += "  "#If player 4 is on Kentucky Ave.
-        ConnecticutKentucky += "     |"
-        print(ConnecticutKentucky)
-        print('''                |_____________|                                                                                                                             |_____________|
-                |Vermon Ave.  |                                                                                                                             |Chance       |
-                |             |                                                                                                                             |             |
-                |Price - 100  |                                                                                                                             |             |''')
-
-
-        VermontChance = "                |"
-        if Player1Location == 9:#If player 1 is on Vermont Ave.
-            VermontChance += "1 "#If player 1 is on Vermont Ave.
-        else:#If player 1 is on Vermont Ave.
-            VermontChance += "  "#If player 1 is on Vermont Ave.
-        if Player2Location == 9:#If player 2 is on Vermont Ave.
-            VermontChance += "2 "#If player 2 is on Vermont Ave.
-        else:##If player 2 is on Vermont Ave.
-            VermontChance += "  "#If player 2 is on Vermont Ave.
-        if Player3Location == 9:#If player 3 is on Vermont Ave.
-            VermontChance += "3 "#If player 3 is on Vermont Ave.
-        else:#If player 3 is on Vermont Ave.
-            VermontChance += "  "#If player 3 is on Vermont Ave.
-        if Player4Location == 9:#If player 4 is on Vermont Ave.
-            VermontChance += "4 "#If player 4 is on Vermont Ave.
-        else:#If player 4 is on Vermont Ave.
-            VermontChance += "  "#If player 4 is on Vermont Ave.
-
-            
-        VermontChance += "     |                                                                                                                             |"
-        if Player1Location == 23:#If player 1 is on Chance
-            VermontChance += "1 "#If player 1 is on Chance
-        else:#If player 1 is on Chance
-            VermontChance += "  "#If player 1 is on Chance
-        if Player2Location == 23:#If player 2 is on Chance
-            VermontChance += "2 "#If player 2 is on Chance
-        else:##If player 2 is on Chance
-            VermontChance += "  "#If player 2 is on Chance
-        if Player3Location == 23:#If player 3 is on Chance
-            VermontChance += "3 "#If player 3 is on Chance
-        else:#If player 3 is on Chance
-            VermontChance += "  "#If player 3 is on Chance
-        if Player4Location == 23:#If player 4 is on Chance
-            VermontChance += "4 "#If player 4 is on Chance
-        else:#If player 4 is on Chance
-            VermontChance += "  "#If player 4 is on Chance
-        VermontChance += "     |"
-        print(VermontChance)
-        print('''                |_____________|                                                                                                                             |_____________|
-                |Chance       |                                                                                                                             |Indiana Ave. |
-                |             |                                                                                                                             |             |
-                |             |                                                                                                                             |Price - 220  |''')
-
-
-        ChanceIndiana = "                |"
-        if Player1Location == 8:#If player 1 is on Chance
-            ChanceIndiana += "1 "#If player 1 is on Chance
-        else:#If player 1 is on Chance
-            ChanceIndiana += "  "#If player 1 is on Chance
-        if Player2Location == 8:#If player 2 is on Chance
-            ChanceIndiana += "2 "#If player 2 is on Chance
-        else:##If player 2 is on Chance
-            ChanceIndiana += "  "#If player 2 is on Chance
-        if Player3Location == 8:#If player 3 is on Chance
-            ChanceIndiana += "3 "#If player 3 is on Chance
-        else:#If player 3 is on Chance
-            ChanceIndiana += "  "#If player 3 is on Chance
-        if Player4Location == 8:#If player 4 is on Chance
-            ChanceIndiana += "4 "#If player 4 is on Chance
-        else:#If player 4 is on Chance
-            ChanceIndiana += "  "#If player 4 is on Chance
-
-            
-        ChanceIndiana += "     |                                                                                                                             |"
-        if Player1Location == 24:#If player 1 is on Indiana Ave.
-            ChanceIndiana += "1 "#If player 1 is on Indiana Ave.
-        else:#If player 1 is on Indiana Ave.
-            ChanceIndiana += "  "#If player 1 is on Indiana Ave.
-        if Player2Location == 24:#If player 2 is on Indiana Ave.
-            ChanceIndiana += "2 "#If player 2 is on Indiana Ave.
-        else:##If player 2 is on Indiana Ave.
-            ChanceIndiana += "  "#If player 2 is on Indiana Ave.
-        if Player3Location == 24:#If player 3 is on Indiana Ave.
-            ChanceIndiana += "3 "#If player 3 is on Indiana Ave.
-        else:#If player 3 is on Indiana Ave.
-            ChanceIndiana += "  "#If player 3 is on Indiana Ave.
-        if Player4Location == 24:#If player 4 is on Indiana Ave.
-            ChanceIndiana += "4 "#If player 4 is on Indiana Ave.
-        else:#If player 4 is on Indiana Ave.
-            ChanceIndiana += "  "#If player 4 is on Indiana Ave.
-        ChanceIndiana += "     |"
-        print(ChanceIndiana)
-        print('''                |_____________|                                                                                                                             |_____________|
-                |Oriental Ave.|                                                                                                                             |Illinois Ave.|
-                |             |                                                                                                                             |             |
-                |Price - 100  |                                                                                                                             |Price - 240  |''')
-
-
-        OrientalIllinois  = "                |"
-        if Player1Location == 7:#If player 1 is on Oriental Ave.
-            OrientalIllinois += "1 "#If player 1 is on Oriental Ave.
-        else:#If player 1 is on Oriental Ave.
-            OrientalIllinois += "  "#If player 1 is on Oriental Ave.
-        if Player2Location == 7:#If player 2 is on Oriental Ave.
-            OrientalIllinois += "2 "#If player 2 is on Oriental Ave.
-        else:##If player 2 is on Oriental Ave.
-            OrientalIllinois += "  "#If player 2 is on Oriental Ave.
-        if Player3Location == 7:#If player 3 is on Oriental Ave.
-            OrientalIllinois += "3 "#If player 3 is on Oriental Ave.
-        else:#If player 3 is on Oriental Ave.
-            OrientalIllinois += "  "#If player 3 is on Oriental Ave.
-        if Player4Location == 7:#If player 4 is on Oriental Ave.
-            OrientalIllinois += "4 "#If player 4 is on Oriental Ave.
-        else:#If player 4 is on Oriental Ave.
-            OrientalIllinois += "  "#If player 4 is on Oriental Ave.
-
-            
-        OrientalIllinois += "     |                                                                                                                             |"
-        if Player1Location == 25:#If player 1 is on Illinois  Ave.
-            OrientalIllinois += "1 "#If player 1 is on Illinois  Ave.
-        else:#If player 1 is on Illinois  Ave.
-            OrientalIllinois += "  "#If player 1 is on Illinois  Ave.
-        if Player2Location == 25:#If player 2 is on Illinois  Ave.
-            OrientalIllinois += "2 "#If player 2 is on Illinois  Ave.
-        else:##If player 2 is on Illinois  Ave.
-            OrientalIllinois += "  "#If player 2 is on Illinois  Ave.
-        if Player3Location == 25:#If player 3 is on Illinois  Ave.
-            OrientalIllinois += "3 "#If player 3 is on Illinois  Ave.
-        else:#If player 3 is on Illinois  Ave.
-            OrientalIllinois += "  "#If player 3 is on Illinois  Ave.
-        if Player4Location == 25:#If player 4 is on Illinois  Ave.
-            OrientalIllinois += "4 "#If player 4 is on Illinois  Ave.
-        else:#If player 4 is on Illinois  Ave.
-            OrientalIllinois += "  "#If player 4 is on Illinois  Ave.
-        OrientalIllinois += "     |"
-        print(OrientalIllinois)
-        print('''                |_____________|                                                                                                                             |_____________|
-                |Reading      |                                                                                                                             |B. & O.      |
-                |Railroad     |                                                                                                                             |Railroad     |
-                |Price - 200  |                                                                                                                             |Price - 200  |''')
-
-
-        ReadingBO  = "                |"
-        if Player1Location == 6:#If player 1 is on Reading Railroad
-            ReadingBO += "1 "#If player 1 is on Reading Railroad
-        else:#If player 1 is on Reading Railroad
-            ReadingBO += "  "#If player 1 is on Reading Railroad
-        if Player2Location == 6:#If player 2 is on Reading Railroad
-            ReadingBO += "2 "#If player 2 is on Reading Railroad
-        else:##If player 2 is on Reading Railroad
-            ReadingBO += "  "#If player 2 is on Reading Railroad
-        if Player3Location == 6:#If player 3 is on Reading Railroad
-            ReadingBO += "3 "#If player 3 is on Reading Railroad
-        else:#If player 3 is on Reading Railroad
-            ReadingBO += "  "#If player 3 is on Reading Railroad
-        if Player4Location == 6:#If player 4 is on Reading Railroad
-            ReadingBO += "4 "#If player 4 is on Reading Railroad
-        else:#If player 4 is on Reading Railroad
-            ReadingBO += "  "#If player 4 is on Reading Railroad
-
-            
-        ReadingBO += "     |                                                                                                                             |"
-        if Player1Location == 26:#If player 1 is on B. & O. Railroad
-            ReadingBO += "1 "#If player 1 is on B. & O. Railroad
-        else:#If player 1 is on B. & O. Railroad
-            ReadingBO += "  "#If player 1 is on B. & O. Railroad
-        if Player2Location == 26:#If player 2 is on B. & O. Railroad
-            ReadingBO += "2 "#If player 2 is on B. & O. Railroad
-        else:##If player 2 is on B. & O. Railroad
-            ReadingBO += "  "#If player 2 is on B. & O. Railroad
-        if Player3Location == 26:#If player 3 is on B. & O. Railroad
-            ReadingBO += "3 "#If player 3 is on B. & O. Railroad
-        else:#If player 3 is on B. & O. Railroad
-            ReadingBO += "  "#If player 3 is on B. & O. Railroad
-        if Player4Location == 26:#If player 4 is on B. & O. Railroad
-            ReadingBO += "4 "#If player 4 is on B. & O. Railroad
-        else:#If player 4 is on B. & O. Railroad
-            ReadingBO += "  "#If player 4 is on B. & O. Railroad
-        ReadingBO += "     |"
-        print(ReadingBO)
-        print('''                |_____________|                                                                                                                             |_____________|
-                |Income Tax   |                                                                                                                             |Atlantic Ave.|
-                |             |                                                                                                                             |             |
-                |             |                                                                                                                             |Price - 260  |''')
-
-
-        IncomeAtlantic = "                |"
-        if Player1Location == 5:#If player 1 is on Income Tax
-            IncomeAtlantic += "1 "#If player 1 is on Income Tax
-        else:#If player 1 is on Income Tax
-            IncomeAtlantic += "  "#If player 1 is on Income Tax
-        if Player2Location == 5:#If player 2 is on Income Tax
-            IncomeAtlantic += "2 "#If player 2 is on Income Tax
-        else:##If player 2 is on Income Tax
-            IncomeAtlantic += "  "#If player 2 is on Income Tax
-        if Player3Location == 5:#If player 3 is on Income Tax
-            IncomeAtlantic += "3 "#If player 3 is on Income Tax
-        else:#If player 3 is on Income Tax
-            IncomeAtlantic += "  "#If player 3 is on Income Tax
-        if Player4Location == 5:#If player 4 is on Income Tax
-            IncomeAtlantic += "4 "#If player 4 is on Income Tax
-        else:#If player 4 is on Income Tax
-            IncomeAtlantic += "  "#If player 4 is on Income Tax
-
-            
-        IncomeAtlantic += "     |                                                                                                                             |"
-        if Player1Location == 27:#If player 1 is on Atlantic Ave.
-            IncomeAtlantic += "1 "#If player 1 is on Atlantic Ave.
-        else:#If player 1 is on Atlantic Ave.
-            IncomeAtlantic += "  "#If player 1 is on Atlantic Ave.
-        if Player2Location == 27:#If player 2 is on Atlantic Ave.
-            IncomeAtlantic += "2 "#If player 2 is on Atlantic Ave.
-        else:##If player 2 is on Atlantic Ave.
-            IncomeAtlantic += "  "#If player 2 is on Atlantic Ave.
-        if Player3Location == 27:#If player 3 is on Atlantic Ave.
-            IncomeAtlantic += "3 "#If player 3 is on Atlantic Ave.
-        else:#If player 3 is on Atlantic Ave.
-            IncomeAtlantic += "  "#If player 3 is on Atlantic Ave.
-        if Player4Location == 27:#If player 4 is on Atlantic Ave.
-            IncomeAtlantic += "4 "#If player 4 is on Atlantic Ave.
-        else:#If player 4 is on Atlantic Ave.
-            IncomeAtlantic += "  "#If player 4 is on Atlantic Ave.
-        IncomeAtlantic += "     |"
-        print(IncomeAtlantic)
-        print('''                |_____________|                                                                                                                             |_____________|
-                |Baltic Ave.  |                                                                                                                             |Ventnor      |
-                |             |                                                                                                                             |Ave.         |
-                |Price - 60   |                                                                                                                             |Price - 260  |''')
-        
-
-        BalticVentnor = "                |"
-        if Player1Location == 4:#If player 1 is on Baltic Ave.
-            BalticVentnor += "1 "#If player 1 is on Baltic Ave.
-        else:#If player 1 is on Baltic Ave.
-            BalticVentnor += "  "#If player 1 is on Baltic Ave.
-        if Player2Location == 4:#If player 2 is on Baltic Ave.
-            BalticVentnor += "2 "#If player 2 is on Baltic Ave.
-        else:##If player 2 is on Baltic Ave.
-            BalticVentnor += "  "#If player 2 is on Baltic Ave.
-        if Player3Location == 4:#If player 3 is on Baltic Ave.
-            BalticVentnor += "3 "#If player 3 is on Baltic Ave.
-        else:#If player 3 is on Baltic Ave.
-            BalticVentnor += "  "#If player 3 is on Baltic Ave.
-        if Player4Location == 4:#If player 4 is on Baltic Ave.
-            BalticVentnor += "4 "#If player 4 is on Baltic Ave.
-        else:#If player 4 is on Baltic Ave.
-            BalticVentnor += "  "#If player 4 is on Baltic Ave.
-
-            
-        BalticVentnor += "     |                                                                                                                             |"
-        if Player1Location == 28:#If player 1 is on Ventnor  Ave.
-            BalticVentnor += "1 "#If player 1 is on Ventnor  Ave.
-        else:#If player 1 is on Ventnor  Ave.
-            BalticVentnor += "  "#If player 1 is on Ventnor  Ave.
-        if Player2Location == 28:#If player 2 is on Ventnor  Ave.
-            BalticVentnor += "2 "#If player 2 is on Ventnor  Ave.
-        else:##If player 2 is on Ventnor  Ave.
-            BalticVentnor += "  "#If player 2 is on Ventnor  Ave.
-        if Player3Location == 28:#If player 3 is on Ventnor  Ave.
-            BalticVentnor += "3 "#If player 3 is on Ventnor  Ave.
-        else:#If player 3 is on Ventnor  Ave.
-            BalticVentnor += "  "#If player 3 is on Ventnor  Ave.
-        if Player4Location == 28:#If player 4 is on Ventnor  Ave.
-            BalticVentnor += "4 "#If player 4 is on Ventnor  Ave.
-        else:#If player 4 is on Ventnor  Ave.
-            BalticVentnor += "  "#If player 4 is on Ventnor  Ave.
-        BalticVentnor += "     |"
-        print(BalticVentnor)
-        print('''                |_____________|                                                                                                                             |_____________|
-                |Community    |                                                                                                                             |Water Works  |
-                |Chest        |                                                                                                                             |             |
-                |             |                                                                                                                             |Price - 150  |''')
-
-
-        CommunityWater = "                |"
-        if Player1Location == 3:#If player 1 is on Community Chest
-            CommunityWater += "1 "#If player 1 is on Community Chest
-        else:#If player 1 is on Community Chest
-            CommunityWater += "  "#If player 1 is on Community Chest
-        if Player2Location == 3:#If player 2 is on Community Chest
-            CommunityWater += "2 "#If player 2 is on Community Chest
-        else:##If player 2 is on Community Chest
-            CommunityWater += "  "#If player 2 is on Community Chest
-        if Player3Location == 3:#If player 3 is on Community Chest
-            CommunityWater += "3 "#If player 3 is on Community Chest
-        else:#If player 3 is on Community Chest
-            CommunityWater += "  "#If player 3 is on Community Chest
-        if Player4Location == 3:#If player 4 is on Community Chest
-            CommunityWater += "4 "#If player 4 is on Community Chest
-        else:#If player 4 is on Community Chest
-            CommunityWater += "  "#If player 4 is on Community Chest
-
-            
-        CommunityWater += "     |                                                                                                                             |"
-        if Player1Location == 29:#If player 1 is on Water Works
-            CommunityWater += "1 "#If player 1 is on Water Works
-        else:#If player 1 is on Water Works
-            CommunityWater += "  "#If player 1 is on Water Works
-        if Player2Location == 29:#If player 2 is on Water Works
-            CommunityWater += "2 "#If player 2 is on Water Works
-        else:##If player 2 is on Water Works
-            CommunityWater += "  "#If player 2 is on Water Works
-        if Player3Location == 29:#If player 3 is on Water Works
-            CommunityWater += "3 "#If player 3 is on Water Works
-        else:#If player 3 is on Water Works
-            CommunityWater += "  "#If player 3 is on Water Works
-        if Player4Location == 29:#If player 4 is on Water Works
-            CommunityWater += "4 "#If player 4 is on Water Works
-        else:#If player 4 is on Water Works
-            CommunityWater += "  "#If player 4 is on Water Works
-        CommunityWater += "     |"
-        print(CommunityWater)
-        print('''                |_____________|                                                                                                                             |_____________|
-                |Mediterranean|                                                                                                                             |Marvin       |
-                |Ave.         |                                                                                                                             |Gardens      |
-                |Price - 60   |                                                                                                                             |Price - 280  |''')
-        
-
-        MediterraneanMarvin  = "                |"
-        if Player1Location == 2:#If player 1 is on Mediterranean Ave.
-            MediterraneanMarvin += "1 "#If player 1 is on Mediterranean Ave.
-        else:#If player 1 is on Mediterranean Ave.
-            MediterraneanMarvin += "  "#If player 1 is on Mediterranean Ave.
-        if Player2Location == 2:#If player 2 is on Mediterranean Ave.
-            MediterraneanMarvin += "2 "#If player 2 is on Mediterranean Ave.
-        else:##If player 2 is on Mediterranean Ave.
-            MediterraneanMarvin += "  "#If player 2 is on Mediterranean Ave.
-        if Player3Location == 2:#If player 3 is on Mediterranean Ave.
-            MediterraneanMarvin += "3 "#If player 3 is on Mediterranean Ave.
-        else:#If player 3 is on Mediterranean Ave.
-            MediterraneanMarvin += "  "#If player 3 is on Mediterranean Ave.
-        if Player4Location == 2:#If player 4 is on Mediterranean Ave.
-            MediterraneanMarvin += "4 "#If player 4 is on Mediterranean Ave.
-        else:#If player 4 is on Mediterranean Ave.
-            MediterraneanMarvin += "  "#If player 4 is on Mediterranean Ave.
-
-            
-        MediterraneanMarvin += "     |                                                                                                                             |"
-        if Player1Location == 30:#If player 1 is on Marvin Gardens
-            MediterraneanMarvin += "1 "#If player 1 is on Marvin Gardens
-        else:#If player 1 is on Marvin Gardens
-            MediterraneanMarvin += "  "#If player 1 is on Marvin Gardens
-        if Player2Location == 30:#If player 2 is on Marvin Gardens
-            MediterraneanMarvin += "2 "#If player 2 is on Marvin Gardens
-        else:##If player 2 is on Marvin Gardens
-            MediterraneanMarvin += "  "#If player 2 is on Marvin Gardens
-        if Player3Location == 30:#If player 3 is on Marvin Gardens
-            MediterraneanMarvin += "3 "#If player 3 is on Marvin Gardens
-        else:#If player 3 is on Marvin Gardens
-            MediterraneanMarvin += "  "#If player 3 is on Marvin Gardens
-        if Player4Location == 30:#If player 4 is on Marvin Gardens
-            MediterraneanMarvin += "4 "#If player 4 is on Marvin Gardens
-        else:#If player 4 is on Marvin Gardens
-            MediterraneanMarvin += "  "#If player 4 is on Marvin Gardens
-        MediterraneanMarvin += "     |"
-        print(MediterraneanMarvin)
-        print('''                |_____________|_____________________________________________________________________________________________________________________________|_____________|
-                |Go           |Boardwalk    |Luxury Tax   |Park place   |Chance       |Short Line   |Pennsylvania |Community    |North        |Pacific Ave. |Go To Jail   |
-                |             |             |             |             |             |Railroad     |Ave.         |Chest        |Carolina Ave.|             |             |
-                |             |Price - 400  |             |Price - 350  |             |Price - 200  |Price - 320  |             |Price - 300  |Price - 300  |             |''')
-        PlayersOnBottomRow = "                |"#If Players are in the top row
-        if Player1Location == 1:#If player 1 is in jail
-            PlayersOnBottomRow += "1 "#If player 1 is in jail
-        else:#If player 1 is in jail
-            PlayersOnBottomRow += "  "#If player 1 is in jail
-        if Player2Location == 1:#If player 2 is in jail
-            PlayersOnBottomRow += "2 "#If player 2 is in jail
-        else:#If player 2 is in jail
-            PlayersOnBottomRow += "  "#If player 2 is in jail
-        if Player3Location == 1:#If player 3 is in jail
-            PlayersOnBottomRow += "3 "#If player 3 is in jail
-        else:#If player 3 is in jail
-            PlayersOnBottomRow += "  "#If player 3 is in jail
-        if Player4Location == 1:#If player 4 is in jail
-            PlayersOnBottomRow += "4 "#If player 4 is in jail
-        else:#If player 4 is in jail
-            PlayersOnBottomRow += "  "#If player 4 is in jail
-
-            
-        PlayersOnBottomRow += "     |"
-        if Player1Location == 40:#If player 1 is on St. Charles Place
-            PlayersOnBottomRow += "1 "#If player 1 is on St. Charles Place
-        else:#If player 1 is on St. Charles Place
-            PlayersOnBottomRow += "  "#If player 1 is on St. Charles Place
-        if Player2Location == 40:#If player 2 is on St. Charles Place
-            PlayersOnBottomRow += "2 "#If player 2 is on St. Charles Place
-        else:##If player 2 is on St. Charles Place
-            PlayersOnBottomRow += "  "#If player 2 is on St. Charles Place
-        if Player3Location == 40:#If player 3 is on St. Charles Place
-            PlayersOnBottomRow += "3 "#If player 3 is on St. Charles Place
-        else:#If player 3 is on St. Charles Place
-            PlayersOnBottomRow += "  "#If player 3 is on St. Charles Place
-        if Player4Location == 40:#If player 4 is on St. Charles Place
-            PlayersOnBottomRow += "4 "#If player 4 is on St. Charles Place
-        else:#If player 4 is on St. Charles Place
-            PlayersOnBottomRow += "  "#If player 4 is on St. Charles Place
-
-            
-        PlayersOnBottomRow += "     |"
-        if Player1Location == 39:#If player 1 is on Electric Company
-            PlayersOnBottomRow += "1 "#If player 1 is on Electric Company
-        else:#If player 1 is on Electric Company
-            PlayersOnBottomRow += "  "#If player 1 is on Electric Company
-        if Player2Location == 39:#If player 2 is on Electric Company
-            PlayersOnBottomRow += "2 "#If player 2 is on Electric Company
-        else:##If player 2 is on Electric Company
-            PlayersOnBottomRow += "  "#If player 2 is on Electric Company
-        if Player3Location == 39:#If player 3 is on Electric Company
-            PlayersOnBottomRow += "3 "#If player 3 is on Electric Company
-        else:#If player 3 is on Electric Company
-            PlayersOnBottomRow += "  "#If player 3 is on Electric Company
-        if Player4Location == 39:#If player 4 is on Electric Company
-            PlayersOnBottomRow += "4 "#If player 4 is on Electric Company
-        else:#If player 4 is on Electric Company
-            PlayersOnBottomRow += "  "#If player 4 is on Electric Company
-
-            
-        PlayersOnBottomRow += "     |"
-        if Player1Location == 38:#If player 1 is on States Ave.
-            PlayersOnBottomRow += "1 "#If player 1 is on States Ave.
-        else:#If player 1 is on States Ave.
-            PlayersOnBottomRow += "  "#If player 1 is on States Ave.
-        if Player2Location == 38:#If player 2 is on States Ave.
-            PlayersOnBottomRow += "2 "#If player 2 is on States Ave.
-        else:##If player 2 is on States Ave.
-            PlayersOnBottomRow += "  "#If player 2 is on States Ave.
-        if Player3Location == 38:#If player 3 is on States Ave.
-            PlayersOnBottomRow += "3 "#If player 3 is on States Ave.
-        else:#If player 3 is on States Ave.
-            PlayersOnBottomRow += "  "#If player 3 is on States Ave.
-        if Player4Location == 38:#If player 4 is on States Ave.
-            PlayersOnBottomRow += "4 "#If player 4 is on States Ave.
-        else:#If player 4 is on States Ave.
-            PlayersOnBottomRow += "  "#If player 4 is on States Ave.
-            
-            
-        PlayersOnBottomRow += "     |"
-        if Player1Location == 37:#If player 1 is on Virginia Ave.
-            PlayersOnBottomRow += "1 "#If player 1 is on Virginia Ave.
-        else:#If player 1 is on Virginia Ave.
-            PlayersOnBottomRow += "  "#If player 1 is on Virginia Ave.
-        if Player2Location == 37:#If player 2 is on Virginia Ave.
-            PlayersOnBottomRow += "2 "#If player 2 is on Virginia Ave.
-        else:##If player 2 is on Virginia Ave.
-            PlayersOnBottomRow += "  "#If player 2 is on Virginia Ave.
-        if Player3Location == 37:#If player 3 is on Virginia Ave.
-            PlayersOnBottomRow += "3 "#If player 3 is on Virginia Ave.
-        else:#If player 3 is on Virginia Ave.
-            PlayersOnBottomRow += "  "#If player 3 is on Virginia Ave.
-        if Player4Location == 37:#If player 4 is on Virginia Ave.
-            PlayersOnBottomRow += "4 "#If player 4 is on Virginia Ave.
-        else:#If player 4 is on Virginia Ave.
-            PlayersOnBottomRow += "  "#If player 4 is on Virginia Ave.
-                 
-            
-        PlayersOnBottomRow += "     |"
-        if Player1Location == 36:#If player 1 is on Pennsylvania Railroad
-            PlayersOnBottomRow += "1 "#If player 1 is on Pennsylvania Railroad
-        else:#If player 1 is on Pennsylvania Railroad
-            PlayersOnBottomRow += "  "#If player 1 is on Pennsylvania Railroad
-        if Player2Location == 36:#If player 2 is on Pennsylvania Railroad
-            PlayersOnBottomRow += "2 "#If player 2 is on Pennsylvania Railroad
-        else:##If player 2 is on Pennsylvania Railroad
-            PlayersOnBottomRow += "  "#If player 2 is on Pennsylvania Railroad
-        if Player3Location == 36:#If player 3 is on Pennsylvania Railroad
-            PlayersOnBottomRow += "3 "#If player 3 is on Pennsylvania Railroad
-        else:#If player 3 is on Pennsylvania Railroad
-            PlayersOnBottomRow += "  "#If player 3 is on Pennsylvania Railroad
-        if Player4Location == 36:#If player 4 is on Pennsylvania Railroad
-            PlayersOnBottomRow += "4 "#If player 4 is on Pennsylvania Railroad
-        else:#If player 4 is on Pennsylvania Railroad
-            PlayersOnBottomRow += "  "#If player 4 is on Pennsylvania Railroad
-           
-            
-        PlayersOnBottomRow += "     |"
-        if Player1Location == 35:#If player 1 is on St. James Place
-            PlayersOnBottomRow += "1 "#If player 1 is on St. James Place
-        else:#If player 1 is on St. James Place
-            PlayersOnBottomRow += "  "#If player 1 is on St. James Place
-        if Player2Location == 35:#If player 2 is on St. James Place
-            PlayersOnBottomRow += "2 "#If player 2 is on St. James Place
-        else:##If player 2 is on St. James Place
-            PlayersOnBottomRow += "  "#If player 2 is on St. James Place
-        if Player3Location == 35:#If player 3 is on St. James Place
-            PlayersOnBottomRow += "3 "#If player 3 is on St. James Place
-        else:#If player 3 is on St. James Place
-            PlayersOnBottomRow += "  "#If player 3 is on St. James Place
-        if Player4Location == 35:#If player 4 is on St. James Place
-            PlayersOnBottomRow += "4 "#If player 4 is on St. James Place
-        else:#If player 4 is on St. James Place
-            PlayersOnBottomRow += "  "#If player 4 is on St. James Place
-                 
-            
-        PlayersOnBottomRow += "     |"
-        if Player1Location == 34:#If player 1 is on Community Chest
-            PlayersOnBottomRow += "1 "#If player 1 is on Community Chest
-        else:#If player 1 is on Community Chest
-            PlayersOnBottomRow += "  "#If player 1 is on Community Chest
-        if Player2Location == 34:#If player 2 is on Community Chest
-            PlayersOnBottomRow += "2 "#If player 2 is on Community Chest
-        else:##If player 2 is on Community Chest
-            PlayersOnBottomRow += "  "#If player 2 is on Community Chest
-        if Player3Location == 34:#If player 3 is on Community Chest
-            PlayersOnBottomRow += "3 "#If player 3 is on Community Chest
-        else:#If player 3 is on Community Chest
-            PlayersOnBottomRow += "  "#If player 3 is on Community Chest
-        if Player4Location == 34:#If player 4 is on Community Chest
-            PlayersOnBottomRow += "4 "#If player 4 is on Community Chest
-        else:#If player 4 is on Community Chest
-            PlayersOnBottomRow += "  "#If player 4 is on Community Chest
-                      
-            
-        PlayersOnBottomRow += "     |"
-        if Player1Location == 33:#If player 1 is on Tennessee Ave.
-            PlayersOnBottomRow += "1 "#If player 1 is on Tennessee Ave.
-        else:#If player 1 is on Tennessee Ave.
-            PlayersOnBottomRow += "  "#If player 1 is on Tennessee Ave.
-        if Player2Location == 33:#If player 2 is on Tennessee Ave.
-            PlayersOnBottomRow += "2 "#If player 2 is on Tennessee Ave.
-        else:##If player 2 is on Tennessee Ave.
-            PlayersOnBottomRow += "  "#If player 2 is on Tennessee Ave.
-        if Player3Location == 33:#If player 3 is on Tennessee Ave.
-            PlayersOnBottomRow += "3 "#If player 3 is on Tennessee Ave.
-        else:#If player 3 is on Tennessee Ave.
-            PlayersOnBottomRow += "  "#If player 3 is on Tennessee Ave.
-        if Player4Location == 33:#If player 4 is on Tennessee Ave.
-            PlayersOnBottomRow += "4 "#If player 4 is on Tennessee Ave.
-        else:#If player 4 is on Tennessee Ave.
-            PlayersOnBottomRow += "  "#If player 4 is on Tennessee Ave.
-                          
-            
-        PlayersOnBottomRow += "     |"
-        if Player1Location == 32:#If player 1 is on New York Ave.
-            PlayersOnBottomRow += "1 "#If player 1 is on New York Ave.
-        else:#If player 1 is on New York Ave.
-            PlayersOnBottomRow += "  "#If player 1 is on New York Ave.
-        if Player2Location == 32:#If player 2 is on New York Ave.
-            PlayersOnBottomRow += "2 "#If player 2 is on New York Ave.
-        else:##If player 2 is on New York Ave.
-            PlayersOnBottomRow += "  "#If player 2 is on New York Ave.
-        if Player3Location == 32:#If player 3 is on New York Ave.
-            PlayersOnBottomRow += "3 "#If player 3 is on New York Ave.
-        else:#If player 3 is on New York Ave.
-            PlayersOnBottomRow += "  "#If player 3 is on New York Ave.
-        if Player4Location == 32:#If player 4 is on New York Ave.
-            PlayersOnBottomRow += "4 "#If player 4 is on New York Ave.
-        else:#If player 4 is on New York Ave.
-            PlayersOnBottomRow += "  "#If player 4 is on New York Ave.
-                                      
-            
-        PlayersOnBottomRow += "     |"
-        if Player1Location == 31:#If player 1 is on Free Parking
-            PlayersOnBottomRow += "1 "#If player 1 is on Free Parking
-        else:#If player 1 is on Free Parking
-            PlayersOnBottomRow += "  "#If player 1 is on Free Parking
-        if Player2Location == 31:#If player 2 is on Free Parking
-            PlayersOnBottomRow += "2 "#If player 2 is on Free Parking
-        else:##If player 2 is on Free Parking
-            PlayersOnBottomRow += "  "#If player 2 is on Free Parking
-        if Player3Location == 31:#If player 3 is on Free Parking
-            PlayersOnBottomRow += "3 "#If player 3 is on Free Parking
-        else:#If player 3 is on Free Parking
-            PlayersOnBottomRow += "  "#If player 3 is on Free Parking
-        if Player4Location == 31:#If player 4 is on Free Parking
-            PlayersOnTopRow += "4 "#If player 4 is on Free Parking
-        else:#If player 4 is on Free Parking
-            PlayersOnBottomRow += "  "#If player 4 is on Free Parking
-        PlayersOnBottomRow += "     |"
-        print(PlayersOnBottomRow)    
-        print('''                |_____________|_____________|_____________|_____________|_____________|_____________|_____________|_____________|_____________|_____________|_____________|''')
-        VeryLongWordThatHasDaMoney = "Player 1 - " + str(Player1Money) +"   Player 2 - " + str(Player2Money)
-        #print("Player 1 - " + str(Player1Money))
-        #print("Player 2 - " + str(Player2Money))
-        if Player3Location != 99999:
-            #print("Player 3 - " + str(Player3Money))
-            VeryLongWordThatHasDaMoney += "   Player 3 - " + str(Player3Money)
-        if Player4Location != 99999:
-            #print("Player 4 - " + str(Player4Money))
-            VeryLongWordThatHasDaMoney += "   Player 4 - " + str(Player4Money)
-        print(VeryLongWordThatHasDaMoney)
-        print("Free Parking amount - " + str(FreeParkingMoney))
-
-
-
-
-
-
-
-
-
-
-
-
+from MonopolyMap import MonopolyMap
 
 def HowManyPlayers():
+    print("It is recommended to put this game into fullscreen.")
     print("How many players? (2-4)")
     while True:
             try:
@@ -903,16 +34,6 @@ def HowManyPlayers():
                             print("That is not 2, 3, or 4")
             except Exception:
                     print("That isn't a int.")
-
-
-
-
-
-
-
-
-
-
 
 rollOne = 0
 rollTwo = 30
@@ -933,22 +54,6 @@ def DiceRoll(y):
                         
         print(s)
         return rollOne + rollTwo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 def GameOver():
     if Player1Money < 0:
@@ -999,23 +104,6 @@ def GameOver():
             print("Player 3 has the most money, Player 3 is the winner.")
             input()
         sys.exit(0)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 MediterraneanAve = 0
@@ -1225,11 +313,6 @@ def UseTheList(LandedOn, WhosThis):
             GameOver()
             input()
 
-
-
-
-
-
 def LandedPlaces(landedOn, WhosThis):
     global list4
     global FreeParkingMoney
@@ -1241,16 +324,11 @@ def LandedPlaces(landedOn, WhosThis):
     global Player2InJail
     global Player3InJail
     global Player4InJail
-
-
-
     if landedOn == 1:
         print("Player " + str(WhosThis) + " landed on Go! (Press Enter)")#Landed on go
         input()
-    
     elif landedOn == 2:#Landed on Mediterranean Ave.
             UseTheList(0, WhosThis)
-       
     elif landedOn == 3: #Need to change later to add random chance in community chest
         if WhosThis == 1:
             Player1Money += 50
@@ -1268,10 +346,8 @@ def LandedPlaces(landedOn, WhosThis):
             Player4Money += 50
             print("Player 4 landed on the Community Chest\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
             input()
-
     elif landedOn == 4:#Baltic Ave.
            UseTheList(1, WhosThis)
-          
     elif landedOn == 5:#Income Tax
         if WhosThis == 1:
             if (int)(Player1Money/10) < 200:
@@ -1325,13 +401,10 @@ def LandedPlaces(landedOn, WhosThis):
                 print("Player 4 landed on the Income Tax\nPlayer 4 had to pay $200 in tax. (Press Enter)")
                 GameOver()
                 input()
-
     elif landedOn == 6:#Reading Railroad
             UseTheList(22, WhosThis)
-
     elif landedOn == 7:#Oriental Ave.
             UseTheList(2, WhosThis)
-
     elif landedOn == 8:
             if WhosThis == 1:
                     Player1Money += 50
@@ -1349,14 +422,10 @@ def LandedPlaces(landedOn, WhosThis):
                     Player4Money += 50
                     print("Player 4 landed on Chance\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
                     input()
-
     elif landedOn == 9:
             UseTheList(3, WhosThis)
-
-
     elif landedOn == 10:
             UseTheList(4, WhosThis)
-
     elif landedOn == 11:
             if WhosThis == 1:
                     if Player1InJail == 0:
@@ -1386,11 +455,8 @@ def LandedPlaces(landedOn, WhosThis):
                     else:
                             print("Player 4 is currently in jail. (Press Enter)")
                             input()
-
     elif landedOn == 12:
             UseTheList(5, WhosThis)
-
-
     elif landedOn == 13:#26
             if list3[26] != 0:
                     if list3[26] == list3[27]:
@@ -1398,23 +464,13 @@ def LandedPlaces(landedOn, WhosThis):
                     else:
                             list4[26] = random.randint(2, 12) * 4
             if WhosThis == 1:
-                    #print("Player 1 has landed on the Electric Company. (Press Enter)")
                     UseTheList(26, WhosThis)
-                    #input()
             elif WhosThis == 2:
-                    #print("Player 2 has landed on the Electric Company. (Press Enter)")
                     UseTheList(26, WhosThis)
-                    #input()
             elif WhosThis == 3:
-                    #print("Player 3 has landed on the Electric Company. (Press Enter)")
                     UseTheList(26, WhosThis)
-                    #input()
             else:
-                    #print("Player 4 has landed on the Electric Company. (Press Enter)")
                     UseTheList(26, WhosThis)
-                    #input()
-
-
     elif landedOn == 14:
             UseTheList(6, WhosThis)
     elif landedOn == 15:
@@ -1422,10 +478,7 @@ def LandedPlaces(landedOn, WhosThis):
     elif landedOn == 16:
             UseTheList(23, WhosThis)
     elif landedOn == 17:
-            UseTheList(8, WhosThis)
-
-
-            
+            UseTheList(8, WhosThis)            
     elif landedOn == 18:
             if WhosThis == 1:
                     Player1Money += 50
@@ -1443,16 +496,10 @@ def LandedPlaces(landedOn, WhosThis):
                     Player4Money += 50
                     print("Player 4 landed on the Community Chest\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
                     input()
-
-
-            
     elif landedOn == 19:
             UseTheList(9, WhosThis)
     elif landedOn == 20:
             UseTheList(10, WhosThis)
-
-
-
     elif landedOn == 21:
             if WhosThis == 1:
                     Player1Money += FreeParkingMoney
@@ -1473,13 +520,9 @@ def LandedPlaces(landedOn, WhosThis):
                     Player4Money += FreeParkingMoney
                     print("Player 4 landed on Free Parking\nPlayer 4 has gained $" + str(FreeParkingMoney) + "!")
                     FreeParkingMoney = 0
-                    input()
-
-                    
+                    input()            
     elif landedOn == 22:
-            UseTheList(11, WhosThis)
-
-            
+            UseTheList(11, WhosThis) 
     elif landedOn == 23:
             if WhosThis == 1:
                     Player1Money += 50
@@ -1497,10 +540,8 @@ def LandedPlaces(landedOn, WhosThis):
                     Player4Money += 50
                     print("Player 4 landed on Chance\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
                     input()
-
     elif landedOn == 24:
             UseTheList(12, WhosThis)
-
     elif landedOn == 25:
             UseTheList(13, WhosThis)
     elif landedOn == 26:
@@ -1509,9 +550,6 @@ def LandedPlaces(landedOn, WhosThis):
             UseTheList(14, WhosThis)
     elif landedOn == 28:
             UseTheList(15, WhosThis)
-
-
-
     elif landedOn == 29:#27
             if list3[27] != 0:
                     if list3[26] == list3[27]:
@@ -1534,10 +572,8 @@ def LandedPlaces(landedOn, WhosThis):
                     #print("Player 4 has landed on the Water Works. (Press Enter)")
                     UseTheList(27, WhosThis)
                     #input()
-
     elif landedOn == 30:
             UseTheList(16, WhosThis)
-
     elif landedOn == 31:
             global Player1Location
             global Player2Location
@@ -1567,12 +603,10 @@ def LandedPlaces(landedOn, WhosThis):
                     #global Player4InJail
                     Player4InJail = 1
                     Player4Location = 11
-
     elif landedOn == 32:
             UseTheList(17, WhosThis)
     elif landedOn == 33:
             UseTheList(18, WhosThis)
-
     elif landedOn == 34:
             if WhosThis == 1:
                     Player1Money += 50
@@ -1590,12 +624,10 @@ def LandedPlaces(landedOn, WhosThis):
                     Player4Money += 50
                     print("Player 4 landed on the Community Chest\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
                     input()
-            
     elif landedOn == 35:
             UseTheList(19, WhosThis)
     elif landedOn == 36:
             UseTheList(25, WhosThis)            
-
     elif landedOn == 37:
             if WhosThis == 1:
                     Player1Money += 50
@@ -1613,11 +645,8 @@ def LandedPlaces(landedOn, WhosThis):
                     Player4Money += 50
                     print("Player 4 landed on Chance\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
                     input()
-
     elif landedOn == 38:
-            UseTheList(20, WhosThis)
-
-            
+            UseTheList(20, WhosThis)    
     elif landedOn == 39:
             if WhosThis == 1:
                     Player1Money -= 75
@@ -1642,23 +671,10 @@ def LandedPlaces(landedOn, WhosThis):
                     FreeParkingMoney += 75
                     print("Player 1 landed on Luxury Tax\nThey have to pay $75. (Press Enter)")
                     input()
-                    GameOver()
-
-            
+                    GameOver()            
     else:#40 / Boardwalk
             UseTheList(21, WhosThis)
     MONOPOLY()
-
-
-
-
-
-
-
-
-
-
-
 
 def TradingWithPeople(StarterOfTrade, WhoTheyWantToTrade):
         print("What do you want to trade?\nMoney?\nBuildings\nFinish\nExit?")
@@ -1953,30 +969,10 @@ def TradingWithPeople(StarterOfTrade, WhoTheyWantToTrade):
                                         print("I don't understand what you mean. Do you or do you not want to make the trade? (Yes/No).")
                         if exitTradeLoop == 1:
                                 break
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                
                 elif WhatTheyChoose.lower() == "exit" or WhatTheyChoose.lower() == "exi" or WhatTheyChoose.lower() == "ex" or WhatTheyChoose.lower() == "e":
                         break
                 else:
                         print("I don't understand? Do you want to trade money, buildings, finish the trade, or exit?")
-
-
-
-
-
-
 
 GreenHouses = 32
 RedHotels = 12
@@ -2164,11 +1160,6 @@ def HouseUpgrading(Player, CostOfHouse, Place):
 
         print("So, do you want to put houses on anything else? If not, you can just type exit to leave.")
                 
-
-
-
-
-
 #                      0  1  2  3  4  5  6  7
 #                      D  L     O     Y
 #                               r     e  G
@@ -2192,8 +1183,6 @@ def MONOPOLY():
                 list4[1] /= 2
                 list4[1] = (int)(list4[1])
                 AlreadyWasAMonopoly[0] = 0
-
-                
         if AlreadyWasAMonopoly[1] == 0 and list3[2] == list3[3] == list3[4] != 0:
                 list4[2] *= 2
                 list4[2] = (int)(list4[2])
@@ -2210,8 +1199,6 @@ def MONOPOLY():
                 list4[4] /= 2
                 list4[4] = (int)(list4[4])
                 AlreadyWasAMonopoly[1] = 0
-
-
         if AlreadyWasAMonopoly[2] == 0 and list3[5] == list3[6] == list3[7] != 0:
                 list4[5] *= 2
                 list4[5] = (int)(list4[5])
@@ -2228,8 +1215,6 @@ def MONOPOLY():
                 list4[7] /= 2
                 list4[7] = (int)(list4[7])
                 AlreadyWasAMonopoly[2] = 0
-
-
         if AlreadyWasAMonopoly[3] == 0 and list3[8] == list3[9] == list3[10] != 0:
                 list4[8] *= 2
                 list4[8] = (int)(list4[8])
@@ -2246,8 +1231,6 @@ def MONOPOLY():
                 list4[10] /= 2
                 list4[10] = (int)(list4[10])
                 AlreadyWasAMonopoly[3] = 0
-
-
         if AlreadyWasAMonopoly[4] == 0 and list3[11] == list3[12] == list3[13] != 0:
                 list4[11] *= 2
                 list4[11] = (int)(list4[11])
@@ -2264,8 +1247,6 @@ def MONOPOLY():
                 list4[13] /= 2
                 list4[13] = (int)(list4[13])
                 AlreadyWasAMonopoly[4] = 0
-
-
         if AlreadyWasAMonopoly[5] == 0 and list3[14] == list3[15] == list3[16] != 0:
                 list4[14] *= 2
                 list4[14] = (int)(list4[14])
@@ -2282,8 +1263,6 @@ def MONOPOLY():
                 list4[16] /= 2
                 list4[16] = (int)(list4[16])
                 AlreadyWasAMonopoly[5] = 0
-
-
         if AlreadyWasAMonopoly[6] == 0 and list3[17] == list3[18] == list3[19] != 0:
                 list4[17] *= 2
                 list4[17] = (int)(list4[17])
@@ -2300,8 +1279,6 @@ def MONOPOLY():
                 list4[19] /= 2
                 list4[19] = (int)(list4[19])
                 AlreadyWasAMonopoly[6] = 0
-
-
         if AlreadyWasAMonopoly[7] == 0 and list3[20] == list3[21] != 0:
                 list4[20] *= 2
                 list4[20] = (int)(list4[20])
@@ -2316,32 +1293,14 @@ def MONOPOLY():
                 AlreadyWasAMonopoly[7] = 0
         print()
 
-
-
-
-
 def ChanceTime(PlayerEffected):
         DaNumberYouGot = random.randint(1, 1)
         print()
 
-
-
-
-
 def CommunityChest(PlayerEffected):
         DaNumberYouGot = random.randint(1, 1)
         print()
-
-
-
-
-
-#def ElectricCompanyWaterWorks(PlayerWhoLandedOnOneOfThem, LandedOn):
-#        print()
-#def GetAllBuildings():
-#        for x in range(0, 28):
-#                list3[x] = 1
-        
+      
 def debugMode(PlayerDebug): #heyguysimdefinitelynotcheatingandijustlikelytypingveryuselesslongwordsallwithoutausinganyspaces
         global Player1Money
         global Player2Money
@@ -2568,9 +1527,10 @@ def debugMode(PlayerDebug): #heyguysimdefinitelynotcheatingandijustlikelytypingv
                 else:
                         for x in range(0, 28):
                                 list3[x] = random.randint(1, 4)
-                
 
-
+SellingValue = [30, 30, 50, 50, 60, 70, 70, 80, 90, 90, 100, 110, 110, 120, 130, 130, 140, 150, 150, 160, 175, 200, 100, 100, 100, 100, 75, 75]
+WhatYouThinkingOfSelling = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+WhatHousesAreCurrentlyBeenSell = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 def HouseForSells(PlayerWhosSelling):
         print("You own...")
         global Player1Money
@@ -2581,14 +1541,19 @@ def HouseForSells(PlayerWhosSelling):
         global list1
         YESNO = ""
         for x in range(0, 28):
+                WhatYouThinkingOfSelling[x] = 0
                 if list3[x] == PlayerWhosSelling:
                         print(str(x) +" - "+list1[x])
-        print("What place do you want to sell?(Type all buildings. Type f to finish)")
+        print("What place do you want to sell?\n(Type all buildings. Type f to finish)\n(Type the same number/name again to no longer mortgage the place)")
         while True:
                 s = "" + input()
                 for x in range(0, 28):
-                        if list1[x] == s and PlayerWhosSelling == list3[x] or s == ("" + str(x)) and PlayerWhosSelling == list3[x]:
-                                print(list1[x])
+                        if WhatYouThinkingOfSelling[x] == 1:
+                                print("Player " + str(PlayerWhosSelling) + " decided to no longer mortgage " + list1[x])
+                                WhatYouThinkingOfSelling[x] = 0
+                        elif list1[x] == s and PlayerWhosSelling == list3[x] or s == ("" + str(x)) and PlayerWhosSelling == list3[x]:
+                                print("player " + str(PlayerWhosSelling) + " decided to mortgage " +list1[x])
+                                WhatYouThinkingOfSelling[x] = 1
                 if s == 'f' or s == 'fi' or s == 'fin' or s == 'fini' or s == 'finis' or s == 'finish':
                         if PlayerWhosSelling == 1 and Player1Money > 0 or PlayerWhosSelling == 2 and Player2Money > 0 or PlayerWhosSelling == 3 and Player3Money > 0 or PlayerWhosSelling == 4 and Player4Money > 0:
                                 break
@@ -2605,7 +1570,7 @@ def HouseForSells(PlayerWhosSelling):
                                         elif YESNO == "no" or YESNO == "n":
                                                 break
                                         else:
-                                                print("That is not yes or no. Please only use one of those 2 words.")
+                                                print("That is not yes/ye/y or no/n. Please only use one of those few words words.")
                                 if YESNO == "yes" or YESNO == "ye" or YESNO == "y":
                                         break
                 
@@ -2648,13 +1613,7 @@ DicePictures = ['''
  |  0   0  |
  |_________|''']
 
-
-
-
 DoublesForJail = 0
-
-
-
         
 x = HowManyPlayers()
 Player1LenghtInJail = 0
@@ -2679,8 +1638,8 @@ while True:
     elif playerTurn == 3 and Player3Location == 99999:
         playerTurn = 1
     else:
-        MonopolyMap()
-        print("It is currently Player " + str(playerTurn) + " Turn.\nType 'Roll' or 'r' to Roll.\nType 'Trade' or 't' to switch money/buildings with other players.\nType 'Add' or 'a' a house to one of your monopolies.\nType 'Stats' or 's' to learn about what people currently have and have not.")
+        MonopolyMap(Player1Location, Player2Location, Player3Location, Player4Location, Player1InJail, Player2InJail, Player3InJail, Player4InJail, Player1Money, Player2Money, Player3Money, Player4Money, FreeParkingMoney)
+        print("It is currently Player " + str(playerTurn) + " Turn.\nType 'Roll' or 'r' to Roll.\nType 'Trade' or 't' to switch money/buildings with other players.\nType 'Add' or 'a' to house to one of your monopolies.\nType 'Stats' or 's' to learn about what people currently have and have not.")
         WhatTheyWantToDo = input().lower()
         if WhatTheyWantToDo.lower() == "roll" or WhatTheyWantToDo.lower() == "r" or WhatTheyWantToDo.lower() == "ro" or WhatTheyWantToDo.lower() == "rol":
                 if playerTurn == 1:
@@ -2811,10 +1770,6 @@ while True:
                             else:
                                 Player4Location += Roll
                                 LandedPlaces(Player4Location, 4)
-                #global rollOne
-                #print(rollOne)
-                #global rollTwo
-                #print(rollTwo)
                 if rollOne != rollTwo or DoublesForJail == 2 and rollOne == rollTwo:
                         playerTurn += 1
                         DoublesForJail = 0
@@ -2827,6 +1782,10 @@ while True:
                 #list2 is cost of places
                 #list3 is the owner
                 #list4 is the rent
+                for x in range(0, 60):
+                        print("")
+                os.system('cls')
+                os.system('clear')
                 for x in range(0, 28):
                         if x < 22:
                                 print(list1[x] + ", cost - " + str(list2[x])+ ", the owner is player - " + str(list3[x]) + " and the rent is currently " + str(list4[x])+" Houses on this place "+ str(HousesArray[x]) +".")
@@ -2867,14 +1826,11 @@ while True:
                 
         elif WhatTheyWantToDo.lower() == "add" or WhatTheyWantToDo.lower() == "ad" or WhatTheyWantToDo.lower() == "a":
                 PromotingBuildings(playerTurn)
-        elif WhatTheyWantToDo.lower() == "sell":
+        elif WhatTheyWantToDo.lower() == "mortgage" or WhatTheyWantToDo.lower() == "mortgag" or WhatTheyWantToDo.lower() == "mortga" or WhatTheyWantToDo.lower() == "mortg" or WhatTheyWantToDo.lower() == "mort" or WhatTheyWantToDo.lower() == "mor" or WhatTheyWantToDo.lower() == "mo" or WhatTheyWantToDo.lower() == "m":
                 HouseForSells(playerTurn)
-        elif WhatTheyWantToDo.lower() == "heyguysimdefinitelynotcheatingandijustlikelytypingveryuselesslongwordsallwithoutausinganyspaces":
+        elif WhatTheyWantToDo.lower() == "debug":
                 print("Debug mode.")
                 debugMode(playerTurn)
-        #elif WhatTheyWantToDo == "adfasfsgaegaeury77234146347935632196c10381056351056371045713501":
-        #        GetAllBuildings()
-        #elif WhatTheyWantToDo.lower() == "imgoingbroke":
-        #        Player1Money = -69
         else:
                 print("What do you want to do? Roll or Look at stats?")
+                input()
