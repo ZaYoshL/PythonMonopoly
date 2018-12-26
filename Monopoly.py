@@ -16,96 +16,20 @@ Player1InJail = 0
 Player2InJail = 0
 Player3InJail = 0
 Player4InJail = 0
-from MonopolyMap import MonopolyMap
 
-def HowManyPlayers():
-    print("It is recommended to put this game into fullscreen.")
-    print("How many players? (2-4)")
-    while True:
-            try:
-                    x = int(input())
-                    if x == 4:
-                            return 4
-                    elif x == 3:
-                            return 3
-                    elif x == 2:
-                            return 2
-                    else:
-                            print("That is not 2, 3, or 4")
-            except Exception:
-                    print("That isn't a int.")
-
+#Dicerolls. If there is 0 and 30 that appear in the game there must be an error.
 rollOne = 0
 rollTwo = 30
 
-def DiceRoll(y):
-        global rollOne
-        global rollTwo
-        rollOne = 1
-        rollTwo = 1
-        rollOne = random.randint(1, 6)
-        rollTwo = random.randint(1, 6)
-        s = DicePictures[rollOne-1] + " " + DicePictures[rollTwo-1] #12 left, 6 down 7 total
-        #ss = ""
-        #for i in range(0, 11):
-        #        for ii in range(1, 6):
-        #                ss += Substr(s, ii, i)
-        #        ss += "\n"
-                        
-        print(s)
-        return rollOne + rollTwo
+#All Imports go here
+from MonopolyMap import MonopolyMap
+from MonopolyGameOver import GameOver
+from PlayersAndRolls import HowManyPlayers
+from PlayersAndRolls import DiceRoll
+from PlayersAndRolls import ReturnRollOne
+from PlayersAndRolls import ReturnRollTwo
 
-def GameOver():
-    if Player1Money < 0:
-        print("Player 1 has no more money.")
-        if Player2Money > Player3Money and Player2Money > Player4Money:
-            print("Player 2 has the most money, Player 2 is the winner.")
-            input()
-        elif Player3Money > Player2Money and Player3Money > Player4Money:
-            print("Player 3 has the most money, Player 3 is the winner.")
-            input()
-        else:
-            print("Player 4 has the most money, Player 4 is the winner.")
-            input()
-        sys.exit(0)
-    elif Player2Money < 0:
-        print("Player 2 has no more money.")
-        if Player1Money > Player3Money and Player1Money > Player4Money:
-            print("Player 1 has the most money, Player 1 is the winner.")
-            input()
-        elif Player3Money > Player1Money and Player3Money > Player4Money:
-            print("Player 3 has the most money, Player 3 is the winner.")
-            input()
-        else:
-            print("Player 4 has the most money, Player 4 is the winner.")
-            input()
-        sys.exit(0)
-    elif Player3Money < 0:
-        print("Player 3 has no more money.")
-        if Player1Money > Player2Money and Player1Money > Player4Money:
-            print("Player 1 has the most money, Player 1 is the winner.")
-            input()
-        elif Player2Money > Player1Money and Player2Money > Player4Money:
-            print("Player 2 has the most money, Player 2 is the winner.")
-            input()
-        else:
-            print("Player 4 has the most money, Player 4 is the winner.")
-            input()
-        sys.exit(0)
-    elif Player4Money < 0:
-        print("Player 4 has no more money.")
-        if Player1Money > Player2Money and Player1Money > Player3Money:
-            print("Player 1 has the most money, Player 1 is the winner.")
-            input()
-        elif Player2Money > Player1Money and Player2Money > Player3Money:
-            print("Player 2 has the most money, Player 2 is the winner.")
-            input()
-        else:
-            print("Player 3 has the most money, Player 3 is the winner.")
-            input()
-        sys.exit(0)
-
-
+#Useless ints that has been replaced with list3
 MediterraneanAve = 0
 BalticAve = 0
 ReadingRailroad = 0
@@ -136,7 +60,7 @@ ShortLineRailroad = 0
 ParkPlace = 0
 Boardwalk = 0
 
-
+#Useless ints that has been replaced with list4
 MediterraneanAveRent = 2
 BalticAveRent = 4
 ReadingRailroadRent = 25
@@ -217,7 +141,7 @@ def UseTheList(LandedOn, WhosThis):
                 Player3Money += list4[LandedOn]
             else:
                 Player4Money += list4[LandedOn]
-            GameOver()
+            GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
             input()
         elif list3[LandedOn] == 0 and WhosThis == 2:
             print("Player 2 has landed on "+str(list1[LandedOn])+"\nWould you like to buy it for $"+str(list2[LandedOn])+" (Yes/No)(can also use y/n)(Rent - "+str(list4[LandedOn])+").")
@@ -250,7 +174,7 @@ def UseTheList(LandedOn, WhosThis):
                 Player3Money += list4[LandedOn]
             else:
                 Player4Money += list4[LandedOn]
-            GameOver()
+            GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
             input()
         elif list3[LandedOn] == 0 and WhosThis == 3:
             print("Player 3 has landed on "+str(list1[LandedOn])+"\nWould you like to buy it for $"+str(list2[LandedOn])+" (Yes/No)(can also use y/n)(Rent - "+str(list4[LandedOn])+").")
@@ -280,7 +204,7 @@ def UseTheList(LandedOn, WhosThis):
                 Player2Money += list4[LandedOn]
             else:
                 Player4Money += list4[LandedOn]
-            GameOver()
+            GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
             input()
         elif list3[LandedOn] == 0 and WhosThis == 4:
             print("Player 4 has landed on "+str(list1[LandedOn])+"\nWould you like to buy it for $"+str(list2[LandedOn])+" (Yes/No)(can also use y/n)(Rent - "+str(list4[LandedOn])+").")
@@ -310,7 +234,7 @@ def UseTheList(LandedOn, WhosThis):
                 Player2Money += list4[LandedOn]
             else:
                 Player3Money += list4[LandedOn]
-            GameOver()
+            GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
             input()
 
 def LandedPlaces(landedOn, WhosThis):
@@ -354,52 +278,52 @@ def LandedPlaces(landedOn, WhosThis):
                 print("Player 1 landed on the Income Tax\nPlayer 1 had to pay 10% of his value in tax which was " + str((int)(Player1Money/10)) + ". (Press Enter)")
                 FreeParkingMoney += (int)(Player1Money/10)
                 Player1Money -= (int)(Player1Money/10)
-                GameOver()
+                GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
                 input()
             else:
                 FreeParkingMoney += 200
                 Player1Money -= 200
                 print("Player 1 landed on the Income Tax\nPlayer 1 had to pay $200 in tax. (Press Enter)")
-                GameOver()
+                GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
                 input()
         elif WhosThis == 2:
             if (int)(Player2Money/10) < 200:
                 print("Player 2 landed on the Income Tax\nPlayer 2 had to pay 10% of his value in tax which was " + str((int)(Player2Money/10)) + ". (Press Enter)")
                 FreeParkingMoney += (int)(Player2Money/10)
                 Player2Money -= (int)(Player2Money/10)
-                GameOver()
+                GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
                 input()
             else:
                 FreeParkingMoney += 200
                 Player2Money -= 200
                 print("Player 2 landed on the Income Tax\nPlayer 2 had to pay $200 in tax. (Press Enter)")
-                GameOver()
+                GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
                 input()
         elif WhosThis == 3:
             if (int)(Player3Money/10) < 200:
                 print("Player 3 landed on the Income Tax\nPlayer 3 had to pay 10% of his value in tax which was " + str((int)(Player3Money/10)) + ". (Press Enter)")
                 FreeParkingMoney += (int)(Player3Money/10)
                 Player3Money -= (int)(Player3Money/10)
-                GameOver()
+                GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
                 input()
             else:
                 FreeParkingMoney += 200
                 Player3Money -= 200
                 print("Player 3 landed on the Income Tax\nPlayer 3 had to pay $200 in tax. (Press Enter)")
-                GameOver()
+                GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
                 input()
         else:
             if (int)(Player4Money/10) < 200:
                 print("Player 4 landed on the Income Tax\nPlayer 4 had to pay 10% of his value in tax which was " + str((int)(Player4Money/10)) + ". (Press Enter)")
                 FreeParkingMoney += (int)(Player4Money/10)
                 Player4Money -= (int)(Player4Money/10)
-                GameOver()
+                GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
                 input()
             else:
                 FreeParkingMoney += 200
                 Player4Money -= 200
                 print("Player 4 landed on the Income Tax\nPlayer 4 had to pay $200 in tax. (Press Enter)")
-                GameOver()
+                GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
                 input()
     elif landedOn == 6:#Reading Railroad
             UseTheList(22, WhosThis)
@@ -653,25 +577,25 @@ def LandedPlaces(landedOn, WhosThis):
                     FreeParkingMoney += 75
                     print("Player 1 landed on Luxury Tax\nThey have to pay $75. (Press Enter)")
                     input()
-                    GameOver()
+                    GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
             elif WhosThis == 2:
                     Player2Money -= 75
                     FreeParkingMoney += 75
                     print("Player 1 landed on Luxury Tax\nThey have to pay $75. (Press Enter)")
                     input()
-                    GameOver()
+                    GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
             elif WhosThis == 3:
                     Player3Money -= 75
                     FreeParkingMoney += 75
                     print("Player 1 landed on Luxury Tax\nThey have to pay $75. (Press Enter)")
                     input()
-                    GameOver()
+                    GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
             else:
                     Player4Money -= 75
                     FreeParkingMoney += 75
                     print("Player 1 landed on Luxury Tax\nThey have to pay $75. (Press Enter)")
                     input()
-                    GameOver()            
+                    GameOver(Player1Money, Player2Money, Player3Money, Player4Money)            
     else:#40 / Boardwalk
             UseTheList(21, WhosThis)
     MONOPOLY()
@@ -1384,11 +1308,13 @@ def debugMode(PlayerDebug): #heyguysimdefinitelynotcheatingandijustlikelytypingv
                 if Player4Location != 99999:
                         Player4Location = input()
         elif s == "16":
-                GameOver()
+                GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
         elif s == "17":
                 MONOPOLY()
         elif s == "18":
                 DiceRoll(PlayerDebug)
+                rollOne = ReturnRollOne()
+                rollTwo = ReturnRollTwo()
         elif s == "19":
                 HowManyPlayers()
         elif s == "20":
@@ -1575,44 +1501,6 @@ def HouseForSells(PlayerWhosSelling):
                                         break
                 
 
-DicePictures = ['''
-  _________ 
- |         |
- |         |
- |    0    |
- |         |
- |_________|''','''
-  _________ 
- |         |
- |  0      |
- |         |
- |      0  |
- |_________|''','''
-  _________ 
- |         |
- |  0      |
- |    0    |
- |      0  |
- |_________|''','''
-  _________ 
- |         |
- |  0   0  |
- |         |
- |  0   0  |
- |_________|''','''
-  _________ 
- |         |
- |  0   0  |
- |    0    |
- |  0   0  |
- |_________|''','''
-  _________ 
- |         |
- |  0   0  |
- |  0   0  |
- |  0   0  |
- |_________|''']
-
 DoublesForJail = 0
         
 x = HowManyPlayers()
@@ -1645,6 +1533,8 @@ while True:
                 if playerTurn == 1:
                     Roll = 0
                     Roll = DiceRoll(1)
+                    rollOne = ReturnRollOne()
+                    rollTwo = ReturnRollTwo()
                     print("Player 1 has rolled a " + str(rollOne) +" and a "+ str(rollTwo) +" Which equals "+ str(Roll) + "!\nPress Enter to Move.")
                     input()
                     if Player1InJail == 1 and rollOne != rollTwo and Player1LenghtInJail == 3:
@@ -1678,6 +1568,8 @@ while True:
                 elif playerTurn == 2:
                     Roll = 0
                     Roll = DiceRoll(2)
+                    rollOne = ReturnRollOne()
+                    rollTwo = ReturnRollTwo()
                     print("player 2 has rolled a " + str(rollOne) +" and a "+ str(rollTwo) +" Which equals "+ str(Roll) + "!\nPress Enter to Move.")
                     input()
                     if Player2InJail == 1 and rollOne != rollTwo and Player2LenghtInJail == 3:
@@ -1711,6 +1603,8 @@ while True:
                 elif playerTurn == 3:
                     Roll = 0
                     Roll = DiceRoll(3)
+                    rollOne = ReturnRollOne()
+                    rollTwo = ReturnRollTwo()
                     print("Player 3 has rolled a " + str(rollOne) +" and a "+ str(rollTwo) +" Which equals "+ str(Roll) + "!\nPress Enter to Move.")
                     input()
                     if Player3InJail == 1 and rollOne != rollTwo and Player3LenghtInJail == 3:
@@ -1742,6 +1636,8 @@ while True:
                 else:
                     Roll = 0
                     Roll = DiceRoll(4)
+                    rollOne = ReturnRollOne()
+                    rollTwo = ReturnRollTwo()
                     print("Player 4 has rolled a " + str(rollOne) +" and a "+ str(rollTwo) +" Which equals "+ str(Roll) + "!\nPress Enter to Move.")
                     input()
                     if Player4InJail == 1 and rollOne != rollTwo and Player3LenghtInJail == 3:
