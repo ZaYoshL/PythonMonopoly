@@ -1527,6 +1527,9 @@ elif x == 2:
     Player3Money = 1
 playerTurn = 1
 while True:
+    print()
+    print()
+    os.system('cls')
     if playerTurn == 5:
         playerTurn = 1
     elif playerTurn == 4 and Player4Location == 99999:
@@ -1689,7 +1692,7 @@ while True:
                 for x in range(0, 60):
                         print("")
                 os.system('cls')
-                os.system('clear')
+                #os.system('clear')
                 for x in range(0, 28):
                         if x < 22:
                                 print(list1[x] + ", cost - " + str(list2[x])+ ", the owner is player - " + str(list3[x]) + " and the rent is currently " + str(list4[x])+" Houses on this place "+ str(HousesArray[x]) +".")
