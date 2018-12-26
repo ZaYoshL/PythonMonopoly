@@ -1,3 +1,4 @@
+import sys
 def GameOver(Player1Money, Player2Money, Player3Money, Player4Money):
     if Player1Money < 0:
         print("Player 1 has no more money.")

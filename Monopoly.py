@@ -117,7 +117,9 @@ def UseTheList(LandedOn, WhosThis):
             print("Player 1 has landed on "+str(list1[LandedOn])+"\nWould you like to buy it for $"+str(list2[LandedOn])+" (Yes/No)(can also use y/n)(Rent - "+str(list4[LandedOn])+").")
             while True:
                 if Player1Money < list2[LandedOn]:
-                    print("You don't have enouge money to pay " + str(list1[LandedOn]))
+                    print("You don't have enough money to pay " + str(list1[LandedOn]))
+                    input()
+                    GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
                     break
                 Answer = input().lower()
                 if Answer == 'yes' or Answer == 'ye' or Answer == 'y':
@@ -147,7 +149,9 @@ def UseTheList(LandedOn, WhosThis):
             print("Player 2 has landed on "+str(list1[LandedOn])+"\nWould you like to buy it for $"+str(list2[LandedOn])+" (Yes/No)(can also use y/n)(Rent - "+str(list4[LandedOn])+").")
             while True:
                 if Player2Money < list2[LandedOn]:
-                    print("You don't have enouge money to pay " + str(list1[LandedOn]))
+                    print("You don't have enough money to pay " + str(list1[LandedOn]))
+                    input()
+                    GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
                     break
                 Answer = input().lower()
                 if Answer == 'yes' or Answer == 'ye' or Answer == 'y':
@@ -180,7 +184,9 @@ def UseTheList(LandedOn, WhosThis):
             print("Player 3 has landed on "+str(list1[LandedOn])+"\nWould you like to buy it for $"+str(list2[LandedOn])+" (Yes/No)(can also use y/n)(Rent - "+str(list4[LandedOn])+").")
             while True:
                 if Player3Money < list2[LandedOn]:
-                    print("You don't have enouge money to pay "+str(list1[LandedOn]))
+                    print("You don't have enough money to pay "+str(list1[LandedOn]))
+                    input
+                    GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
                     break
                 Answer = input().lower()
                 if Answer == 'yes' or Answer == 'ye' or Answer == 'y':
@@ -210,7 +216,9 @@ def UseTheList(LandedOn, WhosThis):
             print("Player 4 has landed on "+str(list1[LandedOn])+"\nWould you like to buy it for $"+str(list2[LandedOn])+" (Yes/No)(can also use y/n)(Rent - "+str(list4[LandedOn])+").")
             while True:
                 if Player4Money < list2[LandedOn]:
-                    print("You don't have enouge money to pay "+str(list1[LandedOn]))
+                    print("You don't have enough money to pay "+str(list1[LandedOn]))
+                    input()
+                    GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
                     break
                 Answer = input().lower()
                 if Answer == 'yes' or Answer == 'ye' or Answer == 'y':
