@@ -719,164 +719,33 @@ def TradingWithPeople(StarterOfTrade, WhoTheyWantToTrade):
                                                 GiveMoney1 = int(GiveMoney1)
                                                 GiveMoney2 = int(GiveMoney2)
                                                 if WhoTheyWantToTrade == 2:
-                                                        Player1Money -= GiveMoney1
-                                                        Player1Money += GiveMoney2
-                                                        Player2Money -= GiveMoney2
-                                                        Player2Money += GiveMoney1
-                                                        for x in range(0, 28):
-                                                                if list5[x] == StarterOfTrade:
-                                                                        list3[x] = StarterOfTrade
-                                                                if list5[x] == WhoTheyWantToTrade:
-                                                                        list3[x] = WhoTheyWantToTrade
-                                                        print("The deal was succesful. (Please press enter to continue.)")
-                                                        exitTradeLoop = 1
-                                                        input()
+                                                        GivingAway(1, 2, GiveMoney1, GiveMoney2, StarterOfTrade, WhoTheyWantToTrade)
                                                 elif WhoTheyWantToTrade == 3:
-                                                        Player1Money -= GiveMoney1
-                                                        Player1Money += GiveMoney2
-                                                        Player3Money -= GiveMoney2
-                                                        Player3Money += GiveMoney1
-                                                        for x in range(0, 28):
-                                                                if list5[x] == StarterOfTrade:
-                                                                        list3[x] = StarterOfTrade
-                                                                if list5[x] == WhoTheyWantToTrade:
-                                                                        list3[x] = WhoTheyWantToTrade
-                                                        print("The deal was succesful. (Please press enter to continue.)")
-                                                        exitTradeLoop = 1
-                                                        input()
+                                                        GivingAway(1, 3, GiveMoney1, GiveMoney2, StarterOfTrade, WhoTheyWantToTrade)
                                                 else:
-                                                        Player1Money -= GiveMoney1
-                                                        Player1Money += GiveMoney2
-                                                        Player4Money -= GiveMoney2
-                                                        Player4Money += GiveMoney1
-                                                        for x in range(0, 28):
-                                                                if list5[x] == StarterOfTrade:
-                                                                        list3[x] = StarterOfTrade
-                                                                if list5[x] == WhoTheyWantToTrade:
-                                                                        list3[x] = WhoTheyWantToTrade
-                                                        print("The deal was succesful. (Please press enter to continue.)")
-                                                        exitTradeLoop = 1
-                                                        input()
+                                                        GivingAway(1, 4, GiveMoney1, GiveMoney2, StarterOfTrade, WhoTheyWantToTrade)
                                         elif StarterOfTrade == 2:
                                                 if WhoTheyWantToTrade == 1:
-                                                        Player2Money -= GiveMoney1
-                                                        Player2Money += GiveMoney2
-                                                        Player1Money -= GiveMoney2
-                                                        Player1Money += GiveMoney1
-                                                        for x in range(0, 28):
-                                                                if list5[x] == StarterOfTrade:
-                                                                        list3[x] = StarterOfTrade
-                                                                if list5[x] == WhoTheyWantToTrade:
-                                                                        list3[x] = WhoTheyWantToTrade
-                                                        print("The deal was succesful. (Please press enter to continue.)")
-                                                        exitTradeLoop = 1
-                                                        input()
+                                                        GivingAway(2, 1, GiveMoney1, GiveMoney2, StarterOfTrade, WhoTheyWantToTrade)
                                                 elif WhoTheyWantToTrade == 3:
-                                                        Player2Money -= GiveMoney1
-                                                        Player2Money += GiveMoney2
-                                                        Player3Money -= GiveMoney2
-                                                        Player3Money += GiveMoney1
-                                                        for x in range(0, 28):
-                                                                if list5[x] == StarterOfTrade:
-                                                                        list3[x] = StarterOfTrade
-                                                                if list5[x] == WhoTheyWantToTrade:
-                                                                        list3[x] = WhoTheyWantToTrade
-                                                        print("The deal was succesful. (Please press enter to continue.)")
-                                                        exitTradeLoop = 1
-                                                        input()
+                                                        GivingAway(2, 3, GiveMoney1, GiveMoney2, StarterOfTrade, WhoTheyWantToTrade)
                                                 else:
-                                                        Player2Money -= GiveMoney1
-                                                        Player2Money += GiveMoney2
-                                                        Player4Money -= GiveMoney2
-                                                        Player4Money += GiveMoney1
-                                                        for x in range(0, 28):
-                                                                if list5[x] == StarterOfTrade:
-                                                                        list3[x] = StarterOfTrade
-                                                                if list5[x] == WhoTheyWantToTrade:
-                                                                        list3[x] = WhoTheyWantToTrade
-                                                        print("The deal was succesful. (Please press enter to continue.)")
-                                                        exitTradeLoop = 1
-                                                        input()
+                                                        GivingAway(2, 4, GiveMoney1, GiveMoney2, StarterOfTrade, WhoTheyWantToTrade)
                                         elif StarterOfTrade == 3:
                                                 if WhoTheyWantToTrade == 1:
-                                                        Player3Money -= GiveMoney1
-                                                        Player3Money += GiveMoney2
-                                                        Player1Money -= GiveMoney2
-                                                        Player1Money += GiveMoney1
-                                                        for x in range(0, 28):
-                                                                if list5[x] == StarterOfTrade:
-                                                                        list3[x] = StarterOfTrade
-                                                                if list5[x] == WhoTheyWantToTrade:
-                                                                        list3[x] = WhoTheyWantToTrade
-                                                        print("The deal was succesful. (Please press enter to continue.)")
-                                                        exitTradeLoop = 1
-                                                        input()
+                                                        GivingAway(3, 1, GiveMoney1, GiveMoney2, StarterOfTrade, WhoTheyWantToTrade)
                                                 elif WhoTheyWantToTrade == 2:
-                                                        Player3Money -= GiveMoney1
-                                                        Player3Money += GiveMoney2
-                                                        Player2Money -= GiveMoney2
-                                                        Player2Money += GiveMoney1
-                                                        for x in range(0, 28):
-                                                                if list5[x] == StarterOfTrade:
-                                                                        list3[x] = StarterOfTrade
-                                                                if list5[x] == WhoTheyWantToTrade:
-                                                                        list3[x] = WhoTheyWantToTrade
-                                                        print("The deal was succesful. (Please press enter to continue.)")
-                                                        exitTradeLoop = 1
-                                                        input()
+                                                        GivingAway(3, 2, GiveMoney1, GiveMoney2, StarterOfTrade, WhoTheyWantToTrade)
                                                 else:
-                                                        Player3Money -= GiveMoney1
-                                                        Player3Money += GiveMoney2
-                                                        Player4Money -= GiveMoney2
-                                                        Player4Money += GiveMoney1
-                                                        for x in range(0, 28):
-                                                                if list5[x] == StarterOfTrade:
-                                                                        list3[x] = StarterOfTrade
-                                                                if list5[x] == WhoTheyWantToTrade:
-                                                                        list3[x] = WhoTheyWantToTrade
-                                                        print("The deal was succesful. (Please press enter to continue.)")
-                                                        exitTradeLoop = 1
-                                                        input()
+                                                        GivingAway(3, 4, GiveMoney1, GiveMoney2, StarterOfTrade, WhoTheyWantToTrade)
                                         else:
                                                 if WhoTheyWantToTrade == 1:
-                                                        Player4Money -= GiveMoney1
-                                                        Player4Money += GiveMoney2
-                                                        Player1Money -= GiveMoney2
-                                                        Player1Money += GiveMoney1
-                                                        for x in range(0, 28):
-                                                                if list5[x] == StarterOfTrade:
-                                                                        list3[x] = StarterOfTrade
-                                                                if list5[x] == WhoTheyWantToTrade:
-                                                                        list3[x] = WhoTheyWantToTrade
-                                                        print("The deal was succesful. (Please press enter to continue.)")
-                                                        exitTradeLoop = 1
-                                                        input()
+                                                        GivingAway(4, 1, GiveMoney1, GiveMoney2, StarterOfTrade, WhoTheyWantToTrade)
                                                 elif WhoTheyWantToTrade == 2:
-                                                        Player4Money -= GiveMoney1
-                                                        Player4Money += GiveMoney2
-                                                        Player2Money -= GiveMoney2
-                                                        Player2Money += GiveMoney1
-                                                        for x in range(0, 28):
-                                                                if list5[x] == StarterOfTrade:
-                                                                        list3[x] = StarterOfTrade
-                                                                if list5[x] == WhoTheyWantToTrade:
-                                                                        list3[x] = WhoTheyWantToTrade
-                                                        print("The deal was succesful. (Please press enter to continue.)")
-                                                        exitTradeLoop = 1
-                                                        input()
+                                                        GivingAway(4, 2, GiveMoney1, GiveMoney2, StarterOfTrade, WhoTheyWantToTrade)
                                                 else:
-                                                        Player4Money -= GiveMoney1
-                                                        Player4Money += GiveMoney2
-                                                        Player3Money -= GiveMoney2
-                                                        Player3Money += GiveMoney1
-                                                        for x in range(0, 28):
-                                                                if list5[x] == StarterOfTrade:
-                                                                        list3[x] = StarterOfTrade
-                                                                if list5[x] == WhoTheyWantToTrade:
-                                                                        list3[x] = WhoTheyWantToTrade
-                                                        print("The deal was succesful. (Please press enter to continue.)")
-                                                        exitTradeLoop = 1
-                                                        input()
+                                                        GivingAway(4, 3, GiveMoney1, GiveMoney2, StarterOfTrade, WhoTheyWantToTrade)
+                                        exitTradeLoop = 1
                                         MONOPOLY()
                                         break
                                 elif AnswerToTrade.lower() == "no" or AnswerToTrade.lower() == "n":
@@ -905,6 +774,43 @@ def TradingWithPeople(StarterOfTrade, WhoTheyWantToTrade):
                         break
                 else:
                         print("I don't understand? Do you want to trade money, buildings, finish the trade, or exit?")
+
+def GivingAway(Player1, Player2, MoneyGiven1, MoneyGiven2, StarterOfTrade, WhoTheyWantToTrade):
+        global Player1Money
+        global Player2Money
+        global Player3Money
+        global Player4Money
+        if Player1 == 1:
+                Player1Money -= ((int)(MoneyGiven1))
+                Player1Money += ((int)(MoneyGiven2))
+        elif Player1 == 2:
+                Player2Money -= ((int)(MoneyGiven1))
+                Player2Money += ((int)(MoneyGiven2))
+        elif Player1 == 3:
+                Player3Money -= ((int)(MoneyGiven1))
+                Player3Money += ((int)(MoneyGiven2))
+        else:
+                Player4Money -= ((int)(MoneyGiven1))
+                Player4Money += ((int)(MoneyGiven2))
+        if Player2 == 1:
+                Player1Money -= ((int)(MoneyGiven2))
+                Player1Money += ((int)(MoneyGiven1))
+        elif Player2 == 2:
+                Player2Money -= ((int)(MoneyGiven2))
+                Player2Money += ((int)(MoneyGiven1))
+        elif Player2 == 3:
+                Player3Money -= ((int)(MoneyGiven2))
+                Player3Money += ((int)(MoneyGiven1))
+        else:
+                Player4Money -= ((int)(MoneyGiven2))
+                Player4Money += ((int)(MoneyGiven1))
+        for x in range(0, 28):
+                if list5[x] == StarterOfTrade:
+                        list3[x] = StarterOfTrade
+                if list5[x] == WhoTheyWantToTrade:
+                        list3[x] = WhoTheyWantToTrade
+        print("The deal was succesful. (Please press enter to continue.)")
+        input()
 
 GreenHouses = 32
 RedHotels = 12
@@ -1102,128 +1008,63 @@ def HouseUpgrading(Player, CostOfHouse, Place):
 AlreadyWasAMonopoly = [0, 0, 0, 0, 0, 0, 0, 0]
 def MONOPOLY():
         global list3
-        global list4
+        global AlreadyWasAMonopoly
         if AlreadyWasAMonopoly[0] == 0 and list3[0] == list3[1] != 0:
-                list4[0] *= 2
-                list4[0] = (int)(list4[0])
-                list4[1] *= 2
-                list4[1] = (int)(list4[1])
-                AlreadyWasAMonopoly[0] = 1
+                ChangingList4Mult(0, 1, 99, 0)
         if AlreadyWasAMonopoly[0] == 1 and list3[0] != list3[1] != 0:
-                list4[0] /= 2
-                list4[0] = (int)(list4[0])
-                list4[1] /= 2
-                list4[1] = (int)(list4[1])
-                AlreadyWasAMonopoly[0] = 0
+                ChangingList4Divi(0, 1, 99, 0)
         if AlreadyWasAMonopoly[1] == 0 and list3[2] == list3[3] == list3[4] != 0:
-                list4[2] *= 2
-                list4[2] = (int)(list4[2])
-                list4[3] *= 2
-                list4[3] = (int)(list4[3])
-                list4[4] *= 2
-                list4[4] = (int)(list4[4])
-                AlreadyWasAMonopoly[1] = 1
+                ChangingList4Mult(2, 3, 4, 1)
         if AlreadyWasAMonopoly[1] == 1 and list3[2] != list3[3] != list3[4] != 0:
-                list4[2] /= 2
-                list4[2] = (int)(list4[2])
-                list4[3] /= 2
-                list4[3] = (int)(list4[3])
-                list4[4] /= 2
-                list4[4] = (int)(list4[4])
-                AlreadyWasAMonopoly[1] = 0
+                ChangingList4Divi(2, 3, 4, 1)
         if AlreadyWasAMonopoly[2] == 0 and list3[5] == list3[6] == list3[7] != 0:
-                list4[5] *= 2
-                list4[5] = (int)(list4[5])
-                list4[6] *= 2
-                list4[6] = (int)(list4[6])
-                list4[7] *= 2
-                list4[7] = (int)(list4[7])
-                AlreadyWasAMonopoly[2] = 1
+                ChangingList4Mult(5, 6, 7, 2)
         if AlreadyWasAMonopoly[2] == 1 and list3[5] != list3[6] != list3[7] != 0:
-                list4[5] /= 2
-                list4[5] = (int)(list4[5])
-                list4[6] /= 2
-                list4[6] = (int)(list4[6])
-                list4[7] /= 2
-                list4[7] = (int)(list4[7])
-                AlreadyWasAMonopoly[2] = 0
+                ChangingList4Divi(5, 6, 7, 2)
         if AlreadyWasAMonopoly[3] == 0 and list3[8] == list3[9] == list3[10] != 0:
-                list4[8] *= 2
-                list4[8] = (int)(list4[8])
-                list4[9] *= 2
-                list4[9] = (int)(list4[9])
-                list4[10] *= 2
-                list4[10] = (int)(list4[10])
-                AlreadyWasAMonopoly[3] = 1
+                ChangingList4Mult(8, 9, 10, 3)
         if AlreadyWasAMonopoly[3] == 1 and list3[8] != list3[9] != list3[10] != 0:
-                list4[8] /= 2
-                list4[8] = (int)(list4[8])
-                list4[9] /= 2
-                list4[9] = (int)(list4[9])
-                list4[10] /= 2
-                list4[10] = (int)(list4[10])
-                AlreadyWasAMonopoly[3] = 0
+                ChangingList4Divi(8, 9, 10, 3)
         if AlreadyWasAMonopoly[4] == 0 and list3[11] == list3[12] == list3[13] != 0:
-                list4[11] *= 2
-                list4[11] = (int)(list4[11])
-                list4[12] *= 2
-                list4[12] = (int)(list4[12])
-                list4[13] *= 2
-                list4[13] = (int)(list4[13])
-                AlreadyWasAMonopoly[4] = 1
+                ChangingList4Mult(11, 12, 13, 4)
         if AlreadyWasAMonopoly[4] == 1 and list3[11] != list3[12] != list3[13] != 0:
-                list4[11] /= 2
-                list4[11] = (int)(list4[11])
-                list4[12] /= 2
-                list4[12] = (int)(list4[12])
-                list4[13] /= 2
-                list4[13] = (int)(list4[13])
-                AlreadyWasAMonopoly[4] = 0
+                ChangingList4Divi(11, 12, 13, 4)
         if AlreadyWasAMonopoly[5] == 0 and list3[14] == list3[15] == list3[16] != 0:
-                list4[14] *= 2
-                list4[14] = (int)(list4[14])
-                list4[15] *= 2
-                list4[15] = (int)(list4[15])
-                list4[16] *= 2
-                list4[16] = (int)(list4[16])
-                AlreadyWasAMonopoly[5] = 1
+                ChangingList4Mult(14, 15, 16, 5)
         if AlreadyWasAMonopoly[5] == 1 and list3[14] != list3[15] != list3[16] != 0:
-                list4[14] /= 2
-                list4[14] = (int)(list4[14])
-                list4[15] /= 2
-                list4[15] = (int)(list4[15])
-                list4[16] /= 2
-                list4[16] = (int)(list4[16])
-                AlreadyWasAMonopoly[5] = 0
+                ChangingList4Divi(14, 15, 16, 5)
         if AlreadyWasAMonopoly[6] == 0 and list3[17] == list3[18] == list3[19] != 0:
-                list4[17] *= 2
-                list4[17] = (int)(list4[17])
-                list4[18] *= 2
-                list4[18] = (int)(list4[18])
-                list4[19] *= 2
-                list4[19] = (int)(list4[19])
-                AlreadyWasAMonopoly[6] = 1
+                ChangingList4Mult(17, 18, 19, 6)
         if AlreadyWasAMonopoly[6] == 1 and list3[17] != list3[18] != list3[19] != 0:
-                list4[17] /= 2
-                list4[17] = (int)(list4[17])
-                list4[18] /= 2
-                list4[18] = (int)(list4[18])
-                list4[19] /= 2
-                list4[19] = (int)(list4[19])
-                AlreadyWasAMonopoly[6] = 0
+                ChangingList4Divi(17, 18, 19, 6)
         if AlreadyWasAMonopoly[7] == 0 and list3[20] == list3[21] != 0:
-                list4[20] *= 2
-                list4[20] = (int)(list4[20])
-                list4[21] *= 2
-                list4[21] = (int)(list4[21])
-                AlreadyWasAMonopoly[7] = 1
+                ChangingList4Mult(20, 21, 99, 7)
         if AlreadyWasAMonopoly[7] == 1 and list3[20] != list3[21] != 0:
-                list4[20] /= 2
-                list4[20] = (int)(list4[20])
-                list4[21] /= 2
-                list4[21] = (int)(list4[21])
-                AlreadyWasAMonopoly[7] = 0
+                ChangingList4Divi(20, 21, 99, 7)
         print()
+
+def ChangingList4Mult(FirstPlace, SecondPlace, ThirdPlace, MonopolyLocation):
+        global list4
+        list4[FirstPlace] *= 2
+        list4[FirstPlace] = (int)(list4[FirstPlace])
+        list4[SecondPlace] *= 2
+        list4[SecondPlace] = (int)(list4[SecondPlace])
+        if ThirdPlace != 99:
+                list4[ThirdPlace] *= 2
+                list4[ThirdPlace] = (int)(list4[ThirdPlace])
+        AlreadyWasAMonopoly[MonopolyLocation] = 1
+        
+def ChangingList4Divi(FirstPlace, SecondPlace, ThirdPlace, MonopolyLocation):
+        global list4
+        list4[FirstPlace] /= 2
+        list4[FirstPlace] = (int)(list4[FirstPlace])
+        list4[SecondPlace] /= 2
+        list4[SecondPlace] = (int)(list4[SecondPlace])
+        if ThirdPlace != 99:
+                list4[ThirdPlace] /= 2
+                list4[ThirdPlace] = (int)(list4[ThirdPlace])
+        AlreadyWasAMonopoly[MonopolyLocation] = 0
+        
 
 def ChanceTime(PlayerEffected):
         DaNumberYouGot = random.randint(1, 1)
@@ -1233,7 +1074,7 @@ def CommunityChest(PlayerEffected):
         DaNumberYouGot = random.randint(1, 1)
         print()
       
-def debugMode(PlayerDebug): #heyguysimdefinitelynotcheatingandijustlikelytypingveryuselesslongwordsallwithoutausinganyspaces
+def debugMode(PlayerDebug):
         global Player1Money
         global Player2Money
         global Player3Money
