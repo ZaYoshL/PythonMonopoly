@@ -168,9 +168,6 @@ def UseTheList(LandedOn, WhosThis):
             input()
         elif list3[LandedOn] != 2 and list3[LandedOn] != 0 and WhosThis == 2:
             print("Player 2 has landed on "+str(list1[LandedOn])+"\nPlayer " + str(list3[LandedOn])+" owns this place and it cost $" + str(list4[LandedOn])  +"\nPress enter.")
-            #if LandedOn == 26 or LandedOn == 27:###################################################################################################################################################################################################################################
-            #        waterElectric
-            #else:
             Player2Money -= list4[LandedOn]
             if list3[LandedOn] == 1:
                 Player1Money += list4[LandedOn]
@@ -264,20 +261,14 @@ def LandedPlaces(landedOn, WhosThis):
     elif landedOn == 3: #Need to change later to add random chance in community chest
         if WhosThis == 1:
             Player1Money += 50
-            print("Player 1 landed on the Community Chest\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-            input()
         elif WhosThis == 2:
             Player2Money += 50
-            print("Player 2 landed on the Community Chest\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-            input()
         elif WhosThis == 3:
             Player3Money += 50
-            print("Player 3 landed on the Community Chest\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-            input()
         else:
             Player4Money += 50
-            print("Player 4 landed on the Community Chest\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-            input()
+        print("Player " + str(WhosThis) + " landed on the Community Chest\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
+        input()
     elif landedOn == 4:#Baltic Ave.
            UseTheList(1, WhosThis)
     elif landedOn == 5:#Income Tax
@@ -286,53 +277,39 @@ def LandedPlaces(landedOn, WhosThis):
                 print("Player 1 landed on the Income Tax\nPlayer 1 had to pay 10% of his value in tax which was " + str((int)(Player1Money/10)) + ". (Press Enter)")
                 FreeParkingMoney += (int)(Player1Money/10)
                 Player1Money -= (int)(Player1Money/10)
-                GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
-                input()
             else:
                 FreeParkingMoney += 200
                 Player1Money -= 200
                 print("Player 1 landed on the Income Tax\nPlayer 1 had to pay $200 in tax. (Press Enter)")
-                GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
-                input()
         elif WhosThis == 2:
             if (int)(Player2Money/10) < 200:
                 print("Player 2 landed on the Income Tax\nPlayer 2 had to pay 10% of his value in tax which was " + str((int)(Player2Money/10)) + ". (Press Enter)")
                 FreeParkingMoney += (int)(Player2Money/10)
                 Player2Money -= (int)(Player2Money/10)
-                GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
-                input()
             else:
                 FreeParkingMoney += 200
                 Player2Money -= 200
                 print("Player 2 landed on the Income Tax\nPlayer 2 had to pay $200 in tax. (Press Enter)")
-                GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
-                input()
         elif WhosThis == 3:
             if (int)(Player3Money/10) < 200:
                 print("Player 3 landed on the Income Tax\nPlayer 3 had to pay 10% of his value in tax which was " + str((int)(Player3Money/10)) + ". (Press Enter)")
                 FreeParkingMoney += (int)(Player3Money/10)
                 Player3Money -= (int)(Player3Money/10)
-                GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
-                input()
             else:
                 FreeParkingMoney += 200
                 Player3Money -= 200
                 print("Player 3 landed on the Income Tax\nPlayer 3 had to pay $200 in tax. (Press Enter)")
-                GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
-                input()
         else:
             if (int)(Player4Money/10) < 200:
                 print("Player 4 landed on the Income Tax\nPlayer 4 had to pay 10% of his value in tax which was " + str((int)(Player4Money/10)) + ". (Press Enter)")
                 FreeParkingMoney += (int)(Player4Money/10)
                 Player4Money -= (int)(Player4Money/10)
-                GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
-                input()
             else:
                 FreeParkingMoney += 200
                 Player4Money -= 200
                 print("Player 4 landed on the Income Tax\nPlayer 4 had to pay $200 in tax. (Press Enter)")
-                GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
-                input()
+        GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
+        input()
     elif landedOn == 6:#Reading Railroad
             UseTheList(22, WhosThis)
     elif landedOn == 7:#Oriental Ave.
@@ -340,20 +317,14 @@ def LandedPlaces(landedOn, WhosThis):
     elif landedOn == 8:
             if WhosThis == 1:
                     Player1Money += 50
-                    print("Player 1 landed on Chance\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-                    input()
             elif WhosThis == 2:
                     Player2Money += 50
-                    print("Player 2 landed on Chance\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-                    input()
             elif WhosThis == 3:
                     Player3Money += 50
-                    print("Player 3 landed on Chance\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-                    input()
             else:
                     Player4Money += 50
-                    print("Player 4 landed on Chance\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-                    input()
+            print("Player " + str(WhosThis) + " landed on Chance\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
+            input()
     elif landedOn == 9:
             UseTheList(3, WhosThis)
     elif landedOn == 10:
@@ -362,31 +333,24 @@ def LandedPlaces(landedOn, WhosThis):
             if WhosThis == 1:
                     if Player1InJail == 0:
                             print("Player 1 is just visiting jail. (Press Enter)")
-                            input()
                     else:
                             print("Player 1 is currently in jail. (Press Enter)")
-                            input()
             elif WhosThis == 2:
                     if Player2InJail == 0:
                             print("Player 2 is just visiting jail. (Press Enter)")
-                            input()
                     else:
                             print("Player 2 is currently in jail. (Press Enter)")
-                            input()
             elif WhosThis == 3:
                     if Player3InJail == 0:
                             print("Player 3 is just visiting jail. (Press Enter)")
-                            input()
                     else:
                             print("Player 3 is currently in jail. (Press Enter)")
-                            input()
             else:
                     if Player4InJail == 0:
                             print("Player 4 is just visiting jail. (Press Enter)")
-                            input()
                     else:
                             print("Player 4 is currently in jail. (Press Enter)")
-                            input()
+            input()
     elif landedOn == 12:
             UseTheList(5, WhosThis)
     elif landedOn == 13:#26
@@ -414,20 +378,14 @@ def LandedPlaces(landedOn, WhosThis):
     elif landedOn == 18:
             if WhosThis == 1:
                     Player1Money += 50
-                    print("Player 1 landed on the Community Chest\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-                    input()
             elif WhosThis == 2:
                     Player2Money += 50
-                    print("Player 2 landed on the Community Chest\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-                    input()
             elif WhosThis == 3:
                     Player3Money += 50
-                    print("Player 3 landed on the Community Chest\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-                    input()
             else:
                     Player4Money += 50
-                    print("Player 4 landed on the Community Chest\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-                    input()
+            print("Player "+ str(WhosThis) +" landed on the Community Chest\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
+            input()
     elif landedOn == 19:
             UseTheList(9, WhosThis)
     elif landedOn == 20:
@@ -435,43 +393,28 @@ def LandedPlaces(landedOn, WhosThis):
     elif landedOn == 21:
             if WhosThis == 1:
                     Player1Money += FreeParkingMoney
-                    print("Player 1 landed on Free Parking\nPlayer 1 has gained $" + str(FreeParkingMoney) + "!")
-                    FreeParkingMoney = 0
-                    input()
             elif WhosThis == 2:
                     Player2Money += FreeParkingMoney
-                    print("Player 2 landed on Free Parking\nPlayer 2 has gained $" + str(FreeParkingMoney) + "!")
-                    FreeParkingMoney = 0
-                    input()
             elif WhosThis == 3:
                     Player3Money += FreeParkingMoney
-                    print("Player 3 landed on Free Parking\nPlayer 3 has gained $" + str(FreeParkingMoney) + "!")
-                    FreeParkingMoney = 0
-                    input()
             else:
                     Player4Money += FreeParkingMoney
-                    print("Player 4 landed on Free Parking\nPlayer 4 has gained $" + str(FreeParkingMoney) + "!")
-                    FreeParkingMoney = 0
-                    input()            
+            print("Player " + str(WhosThis) + " landed on Free Parking\nPlayer 4 has gained $" + str(FreeParkingMoney) + "!")
+            FreeParkingMoney = 0
+            input()            
     elif landedOn == 22:
             UseTheList(11, WhosThis) 
     elif landedOn == 23:
             if WhosThis == 1:
                     Player1Money += 50
-                    print("Player 1 landed on Chance\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-                    input()
             elif WhosThis == 2:
                     Player2Money += 50
-                    print("Player 2 landed on Chance\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-                    input()
             elif WhosThis == 3:
                     Player3Money += 50
-                    print("Player 3 landed on Chance\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-                    input()
             else:
                     Player4Money += 50
-                    print("Player 4 landed on Chance\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-                    input()
+            print("Player " + str(WhosThis) + " landed on Chance\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
+            input()
     elif landedOn == 24:
             UseTheList(12, WhosThis)
     elif landedOn == 25:
@@ -489,21 +432,13 @@ def LandedPlaces(landedOn, WhosThis):
                     else:
                             list4[27] = random.randint(2, 12) * 4
             if WhosThis == 1:
-                    #print("Player 1 has landed on the Water Works. (Press Enter)")
                     UseTheList(27, WhosThis)
-                    #input()
             elif WhosThis == 2:
-                    #print("Player 2 has landed on the Water Works. (Press Enter)")
                     UseTheList(27, WhosThis)
-                    #input()
             elif WhosThis == 3:
-                    #print("Player 3 has landed on the Water Works. (Press Enter)")
                     UseTheList(27, WhosThis)
-                    #input()
             else:
-                    #print("Player 4 has landed on the Water Works. (Press Enter)")
                     UseTheList(27, WhosThis)
-                    #input()
     elif landedOn == 30:
             UseTheList(16, WhosThis)
     elif landedOn == 31:
@@ -512,29 +447,19 @@ def LandedPlaces(landedOn, WhosThis):
             global Player3Location
             global Player4Location
             if WhosThis == 1:
-                    print("Player 1 has to go to Jail. (Press Enter)")
-                    input()
-                    #global Player1InJail
                     Player1InJail = 1
                     Player1Location = 11
             elif WhosThis == 2:
-                    print("Player 2 has to go to Jail. (Press Enter)")
-                    input()
-                    #global Player2InJail
                     Player2InJail = 1
                     Player2Location = 11
             elif WhosThis == 3:
-                    print("Player 3 has to go to Jail. (Press Enter)")
-                    input()
-                    #global Player3InJail
                     Player3InJail = 1
                     Player3Location = 11
             else:
-                    print("Player 4 has to go to Jail. (Press Enter)")
-                    input()
-                    #global Player4InJail
                     Player4InJail = 1
                     Player4Location = 11
+            print("Player " + str(WhosThis) + " has to go to Jail. (Press Enter)")
+            input()
     elif landedOn == 32:
             UseTheList(17, WhosThis)
     elif landedOn == 33:
@@ -542,20 +467,14 @@ def LandedPlaces(landedOn, WhosThis):
     elif landedOn == 34:
             if WhosThis == 1:
                     Player1Money += 50
-                    print("Player 1 landed on the Community Chest\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-                    input()
             elif WhosThis == 2:
                     Player2Money += 50
-                    print("Player 2 landed on the Community Chest\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-                    input()
             elif WhosThis == 3:
                     Player3Money += 50
-                    print("Player 3 landed on the Community Chest\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-                    input()
             else:
                     Player4Money += 50
-                    print("Player 4 landed on the Community Chest\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-                    input()
+            print("Player " + str(WhosThis) + " landed on the Community Chest\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
+            input()
     elif landedOn == 35:
             UseTheList(19, WhosThis)
     elif landedOn == 36:
@@ -563,47 +482,29 @@ def LandedPlaces(landedOn, WhosThis):
     elif landedOn == 37:
             if WhosThis == 1:
                     Player1Money += 50
-                    print("Player 1 landed on Chance\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-                    input()
             elif WhosThis == 2:
                     Player2Money += 50
-                    print("Player 2 landed on Chance\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-                    input()
             elif WhosThis == 3:
                     Player3Money += 50
-                    print("Player 3 landed on Chance\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-                    input()
             else:
                     Player4Money += 50
-                    print("Player 4 landed on Chance\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
-                    input()
+            print("Player " + str(WhosThis) + " landed on Chance\nSince I haven't added the random chance, here's 50 dollars. (Press Enter)")
+            input()
     elif landedOn == 38:
             UseTheList(20, WhosThis)    
     elif landedOn == 39:
             if WhosThis == 1:
                     Player1Money -= 75
-                    FreeParkingMoney += 75
-                    print("Player 1 landed on Luxury Tax\nThey have to pay $75. (Press Enter)")
-                    input()
-                    GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
             elif WhosThis == 2:
                     Player2Money -= 75
-                    FreeParkingMoney += 75
-                    print("Player 1 landed on Luxury Tax\nThey have to pay $75. (Press Enter)")
-                    input()
-                    GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
             elif WhosThis == 3:
                     Player3Money -= 75
-                    FreeParkingMoney += 75
-                    print("Player 1 landed on Luxury Tax\nThey have to pay $75. (Press Enter)")
-                    input()
-                    GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
             else:
                     Player4Money -= 75
-                    FreeParkingMoney += 75
-                    print("Player 1 landed on Luxury Tax\nThey have to pay $75. (Press Enter)")
-                    input()
-                    GameOver(Player1Money, Player2Money, Player3Money, Player4Money)            
+            FreeParkingMoney += 75
+            print("Player " + str(WhosThis) + " landed on Luxury Tax\nThey have to pay $75. (Press Enter)")
+            input()
+            GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
     else:#40 / Boardwalk
             UseTheList(21, WhosThis)
     MONOPOLY()
@@ -1096,7 +997,7 @@ def debugMode(PlayerDebug):
         global Player4Location
         print("Welcome to the place to change Ints/Strings, test different defs, and random funny things. (In no predictular order)\n(Also with no fail safes, so if you puta String for an int... You can get an error if the int isn't change before it is called to be use)")
         print("1 - Player in debug mode gets all buildings\n2 - Player in debug money == -69\n3 - Community Chest\n4 - Chance Time\n5 - Everything is free!!!\n6 - Make houses amount the same amount\n7 - Change list 1\n8 - Change list 2\n9 - Change list 3\n10 - Change list 4\n11 - Change list 5\n12 - Change Everyone Money Amount")
-        print("13 - Choice who is in jail\n14 - Move somewhere and activate its effect\n15 - Just move everyone somewhere\n16 - Test GameOver()\n17 - Test MONOPOLY()\n18 - Test DiceRoll()\n19 - Retest HowManyPlayers()\n20 - Test UseTheList()\n21 - Test dice picture\n22 - Change free parking amount")
+        print("13 - Choice who is in jail\n14 - Move somewhere and activate its effect\n15 - Just move everyone somewhere\n16 - Test GameOver()\n17 - Test MONOPOLY()\n18 - Test DiceRoll()\n19 - Retest HowManyPlayers()\n20 - Test UseTheList()\n21 - Test dice picture(Currently broken)\n22 - Change free parking amount")
         print("23 - Change all useless rent ints\n24 - Change all useless house own int\n25 - Give everyone random buildings")
         s = "" + input()
         if s == "1":
@@ -1137,25 +1038,25 @@ def debugMode(PlayerDebug):
                 for x in range(0, 28):
                         list5[x] = ""+input()
         elif s == "12":
-                Player1Money = input()
-                Player2Money = input()
-                Player3Money = input()
-                Player4Money = input()
+                Player1Money = ((int)(input()))
+                Player2Money = ((int)(input()))
+                Player3Money = ((int)(input()))
+                Player4Money = ((int)(input()))
         elif s == "13":
-                Player1InJail = input()
-                Player1InJail = input()
-                Player1InJail = input()
-                Player1InJail = input()
+                Player1InJail = ((int)(input()))
+                Player1InJail = ((int)(input()))
+                Player1InJail = ((int)(input()))
+                Player1InJail = ((int)(input()))
         elif s == "14":
-                PlayToGo = input()
+                PlayToGo = ((int)(input()))
                 LandedPlaces(PlayToGo, PlayerDebug)
         elif s == "15":
-                Player1Location = input()
-                Player2Location = input()
+                Player1Location = ((int)(input()))
+                Player2Location = ((int)(input()))
                 if Player3Location != 99999:
-                        Player3Location = input()
+                        Player3Location = ((int)(input()))
                 if Player4Location != 99999:
-                        Player4Location = input()
+                        Player4Location = ((int)(input()))
         elif s == "16":
                 GameOver(Player1Money, Player2Money, Player3Money, Player4Money)
         elif s == "17":
@@ -1167,14 +1068,14 @@ def debugMode(PlayerDebug):
         elif s == "19":
                 HowManyPlayers()
         elif s == "20":
-                PlayToGo = input()
+                PlayToGo = ((int)(input()))
                 UseTheList(PlayToGo, PlayerDebug)
-        elif s == "21":
-                Picture = input()
-                print(DicePictures[Picture])
+        #elif s == "21":
+        #        Picture = input()
+        #        print(DicePictures[Picture])
         elif s == "22":
                 global FreeParkingMoney
-                FreeParkingMoney = input()
+                FreeParkingMoney = ((int)(input()))
         elif s == "23":
                 global MediterraneanAveRent
                 global BalticAveRent
@@ -1205,34 +1106,34 @@ def debugMode(PlayerDebug):
                 global ParkPlaceRent
                 global BoardwalkRent
                 
-                MediterraneanAveRent = input()
-                BalticAveRent = input()
-                ReadingRailroadRent = input()
-                OrientalAveRent = input()
-                VermontAveRent = input()
-                ConnecticutAveRent = input()
-                StCharlesPlaceRent = input()
-                ElectricCompanyRent = input()
-                StatesAveRent = input()
-                VirginiaAveRent = input()
-                PennsylvaniaRailroadRent = input()
-                StJamesPlaceRent = input()
-                TennesseeAveRent = input()
-                NewYorkAveRent = input()
-                KentuckyAveRent = input()
-                IndianaAveRent = input()
-                IllinoisAveRent = input()
-                BORailroadRent = input()
-                AtlanticAveRent = input()
-                VentnorAveRent = input()
-                WaterWorksRent = input()
-                MarvinGardensRent = input()
-                PacificAveRent = input()
-                NorthCarolinaAveRent = input()
-                PennsylvaniaAveRent = input()
-                ShortLineRailroadRent = input()
-                ParkPlaceRent = input()
-                BoardwalkRent = input()
+                MediterraneanAveRent = ((int)(input()))
+                BalticAveRent = ((int)(input()))
+                ReadingRailroadRent = ((int)(input()))
+                OrientalAveRent = ((int)(input()))
+                VermontAveRent = ((int)(input()))
+                ConnecticutAveRent = ((int)(input()))
+                StCharlesPlaceRent = ((int)(input()))
+                ElectricCompanyRent = ((int)(input()))
+                StatesAveRent = ((int)(input()))
+                VirginiaAveRent = ((int)(input()))
+                PennsylvaniaRailroadRent = ((int)(input()))
+                StJamesPlaceRent = ((int)(input()))
+                TennesseeAveRent = ((int)(input()))
+                NewYorkAveRent = ((int)(input()))
+                KentuckyAveRent = ((int)(input()))
+                IndianaAveRent = ((int)(input()))
+                IllinoisAveRent = ((int)(input()))
+                BORailroadRent = ((int)(input()))
+                AtlanticAveRent = ((int)(input()))
+                VentnorAveRent = ((int)(input()))
+                WaterWorksRent = ((int)(input()))
+                MarvinGardensRent = ((int)(input()))
+                PacificAveRent = ((int)(input()))
+                NorthCarolinaAveRent = ((int)(input()))
+                PennsylvaniaAveRent = ((int)(input()))
+                ShortLineRailroadRent = ((int)(input()))
+                ParkPlaceRent = ((int)(input()))
+                BoardwalkRent = ((int)(input()))
         elif s == "24":
                 global MediterraneanAve
                 global BalticAve
@@ -1263,35 +1164,35 @@ def debugMode(PlayerDebug):
                 global ParkPlace
                 global Boardwalk
                 
-                MediterraneanAve = input()
-                BalticAve = input()
-                ReadingRailroad = input()
-                OrientalAve = input()
-                VermontAve = input()
-                ConnecticutAve = input()
-                StCharlesPlace = input()
-                ElectricCompany = input()
-                StatesAve = input()
-                VirginiaAve = input()
-                PennsylvaniaRailroad = input()
-                StJamesPlace = input()
-                TennesseeAve = input()
-                NewYorkAve = input()
-                FreeParkingMoney = input()
-                KentuckyAve = input()
-                IndianaAve = input()
-                IllinoisAve = input()
-                BORailroad = input()
-                AtlanticAve = input()
-                VentnorAve = input()
-                WaterWorks = input()
-                MarvinGardens = input()
-                PacificAve = input()
-                NorthCarolinaAve = input()
-                PennsylvaniaAve = input()
-                ShortLineRailroad = input()
-                ParkPlace = input()
-                Boardwalk = input()
+                MediterraneanAve = ((int)(input()))
+                BalticAve = ((int)(input()))
+                ReadingRailroad = ((int)(input()))
+                OrientalAve = ((int)(input()))
+                VermontAve = ((int)(input()))
+                ConnecticutAve = ((int)(input()))
+                StCharlesPlace = ((int)(input()))
+                ElectricCompany = ((int)(input()))
+                StatesAve = ((int)(input()))
+                VirginiaAve = ((int)(input()))
+                PennsylvaniaRailroad = ((int)(input()))
+                StJamesPlace = ((int)(input()))
+                TennesseeAve = ((int)(input()))
+                NewYorkAve = ((int)(input()))
+                FreeParkingMoney = ((int)(input()))
+                KentuckyAve = ((int)(input()))
+                IndianaAve = ((int)(input()))
+                IllinoisAve = ((int)(input()))
+                BORailroad = ((int)(input()))
+                AtlanticAve = ((int)(input()))
+                VentnorAve = ((int)(input()))
+                WaterWorks = ((int)(input()))
+                MarvinGardens = ((int)(input()))
+                PacificAve = ((int)(input()))
+                NorthCarolinaAve = ((int)(input()))
+                PennsylvaniaAve = ((int)(input()))
+                ShortLineRailroad = ((int)(input()))
+                ParkPlace = ((int)(input()))
+                Boardwalk = ((int)(input()))
         elif s == "25":
                 if Player3Location == 99999:
                         for x in range(0, 28):
@@ -1302,6 +1203,7 @@ def debugMode(PlayerDebug):
                 else:
                         for x in range(0, 28):
                                 list3[x] = random.randint(1, 4)
+        input()
 
 SellingValue = [30, 30, 50, 50, 60, 70, 70, 80, 90, 90, 100, 110, 110, 120, 130, 130, 140, 150, 150, 160, 175, 200, 100, 100, 100, 100, 75, 75]
 WhatYouThinkingOfSelling = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
