@@ -22,7 +22,7 @@ rollTwo = 30
 def DiceRoll(y):
         global rollOne
         global rollTwo
-        rollOne = 1
+        rollOne = 2
         rollTwo = 1
         rollOne = random.randint(1, 6)
         rollTwo = random.randint(1, 6)
