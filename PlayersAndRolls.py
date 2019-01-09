@@ -24,8 +24,8 @@ def DiceRoll(y):
         global rollTwo
         rollOne = 0
         rollTwo = 1
-        #rollOne = random.randint(1, 6)
-        #rollTwo = random.randint(1, 6)
+        rollOne = random.randint(1, 6)
+        rollTwo = random.randint(1, 6)
         s = DicePictures[rollOne-1] + " " + DicePictures[rollTwo-1] #12 left, 6 down 7 tota           
         print(s)
         return rollOne + rollTwo
